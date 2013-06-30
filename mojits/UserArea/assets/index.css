@@ -1,0 +1,9 @@
+.userMenu{background-color:#31313e !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:hidden}
+.userMenu .pure-menu{background:transparent;border:0}
+.userMenu .pure-menu .pure-menu-open{background:#31313e !important}
+.userMenu .pure-menu .pure-menu-heading{margin:0 !important;background-color:#31313e !important}
+.userMenu li{background-color:#34343b !important}
+.userMenu li a{color:#fff}
+.userMenu li a:hover,.userMenu li a:focus{background-color:#ff2900 !important}
+.userMenuClose{width:86px !important}
+.userMenuOpen{width:200px !important}

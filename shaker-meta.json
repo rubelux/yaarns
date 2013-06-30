@@ -1,0 +1,51 @@
+{
+    "app": {
+        "*": {
+            "mojits": {
+                "::loginSubmit": {
+                    "index": {
+                        "css": [
+                            "/static/::loginSubmit/assets/index.css"
+                        ]
+                    }
+                },
+                "AppArea": {
+                    "index": {
+                        "css": [
+                            "/static/AppArea/assets/index.css"
+                        ]
+                    }
+                },
+                "Body": {
+                    "index": {
+                        "css": [
+                            "/static/Body/assets/index.css",
+                            "/static/Body/assets/pure-style.css"
+                        ]
+                    }
+                },
+                "Content": {
+                    "index": {
+                        "css": [
+                            "/static/Content/assets/index.css"
+                        ]
+                    }
+                },
+                "StoryArea": {
+                    "index": {
+                        "css": [
+                            "/static/StoryArea/assets/index.css"
+                        ]
+                    }
+                },
+                "UserArea": {
+                    "index": {
+                        "css": [
+                            "/static/UserArea/assets/index.css"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

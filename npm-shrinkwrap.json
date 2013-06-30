@@ -1,0 +1,306 @@
+{
+  "name": "habben",
+  "version": "0.0.1",
+  "dependencies": {
+    "mojito": {
+      "version": "0.5.9pr1",
+      "dependencies": {
+        "colors": {
+          "version": "0.6.0-1"
+        },
+        "express": {
+          "version": "2.5.10",
+          "dependencies": {
+            "connect": {
+              "version": "1.9.2",
+              "dependencies": {
+                "formidable": {
+                  "version": "1.0.14"
+                }
+              }
+            },
+            "qs": {
+              "version": "0.4.2"
+            },
+            "mkdirp": {
+              "version": "0.3.0"
+            }
+          }
+        },
+        "glob": {
+          "version": "3.1.21",
+          "dependencies": {
+            "minimatch": {
+              "version": "0.2.12",
+              "dependencies": {
+                "lru-cache": {
+                  "version": "2.3.0"
+                },
+                "sigmund": {
+                  "version": "1.0.0"
+                }
+              }
+            },
+            "graceful-fs": {
+              "version": "1.2.2"
+            },
+            "inherits": {
+              "version": "1.0.0"
+            }
+          }
+        },
+        "js-yaml": {
+          "version": "1.0.2",
+          "dependencies": {
+            "argparse": {
+              "version": "0.1.15",
+              "dependencies": {
+                "underscore": {
+                  "version": "1.4.4"
+                },
+                "underscore.string": {
+                  "version": "2.3.1"
+                }
+              }
+            }
+          }
+        },
+        "jslint": {
+          "version": "0.1.9",
+          "dependencies": {
+            "nopt": {
+              "version": "1.0.10",
+              "dependencies": {
+                "abbrev": {
+                  "version": "1.0.4"
+                }
+              }
+            }
+          }
+        },
+        "mime": {
+          "version": "1.2.4"
+        },
+        "mkdirp": {
+          "version": "0.3.5"
+        },
+        "request": {
+          "version": "2.9.202"
+        },
+        "rimraf": {
+          "version": "2.2.0",
+          "dependencies": {
+            "graceful-fs": {
+              "version": "1.2.2"
+            }
+          }
+        },
+        "semver": {
+          "version": "1.0.14"
+        },
+        "wrench": {
+          "version": "1.3.9"
+        },
+        "ycb": {
+          "version": "1.0.5"
+        },
+        "yui": {
+          "version": "3.9.1",
+          "dependencies": {
+            "request": {
+              "version": "2.12.0",
+              "dependencies": {
+                "form-data": {
+                  "version": "0.0.3",
+                  "dependencies": {
+                    "combined-stream": {
+                      "version": "0.0.3",
+                      "dependencies": {
+                        "delayed-stream": {
+                          "version": "0.0.5"
+                        }
+                      }
+                    },
+                    "async": {
+                      "version": "0.1.9"
+                    }
+                  }
+                },
+                "mime": {
+                  "version": "1.2.7"
+                }
+              }
+            }
+          }
+        },
+        "yuidocjs": {
+          "version": "0.3.44",
+          "dependencies": {
+            "rimraf": {
+              "version": "2.0.3",
+              "dependencies": {
+                "graceful-fs": {
+                  "version": "1.1.14"
+                }
+              }
+            },
+            "node-markdown": {
+              "version": "0.1.1"
+            },
+            "minimatch": {
+              "version": "0.2.12",
+              "dependencies": {
+                "lru-cache": {
+                  "version": "2.3.0"
+                },
+                "sigmund": {
+                  "version": "1.0.0"
+                }
+              }
+            },
+            "graceful-fs": {
+              "version": "1.2.2"
+            },
+            "express": {
+              "version": "3.1.2",
+              "dependencies": {
+                "connect": {
+                  "version": "2.7.5",
+                  "dependencies": {
+                    "qs": {
+                      "version": "0.5.1"
+                    },
+                    "formidable": {
+                      "version": "1.0.11"
+                    },
+                    "buffer-crc32": {
+                      "version": "0.1.1"
+                    },
+                    "bytes": {
+                      "version": "0.2.0"
+                    },
+                    "pause": {
+                      "version": "0.0.1"
+                    }
+                  }
+                },
+                "commander": {
+                  "version": "0.6.1"
+                },
+                "range-parser": {
+                  "version": "0.0.4"
+                },
+                "cookie": {
+                  "version": "0.0.5"
+                },
+                "buffer-crc32": {
+                  "version": "0.2.1"
+                },
+                "fresh": {
+                  "version": "0.1.0"
+                },
+                "methods": {
+                  "version": "0.0.1"
+                },
+                "send": {
+                  "version": "0.1.0",
+                  "dependencies": {
+                    "mime": {
+                      "version": "1.2.6"
+                    }
+                  }
+                },
+                "cookie-signature": {
+                  "version": "1.0.0"
+                },
+                "debug": {
+                  "version": "0.7.2"
+                }
+              }
+            }
+          }
+        },
+        "yuitest": {
+          "version": "0.7.9"
+        },
+        "yuitest-coverage": {
+          "version": "0.0.6"
+        }
+      }
+    },
+    "express": {
+      "version": "2.5.11",
+      "dependencies": {
+        "connect": {
+          "version": "1.9.2",
+          "dependencies": {
+            "formidable": {
+              "version": "1.0.14"
+            }
+          }
+        },
+        "mime": {
+          "version": "1.2.4"
+        },
+        "qs": {
+          "version": "0.4.2"
+        },
+        "mkdirp": {
+          "version": "0.3.0"
+        }
+      }
+    },
+    "passport": {
+      "version": "0.1.17",
+      "dependencies": {
+        "pkginfo": {
+          "version": "0.2.3"
+        },
+        "pause": {
+          "version": "0.0.1"
+        }
+      }
+    },
+    "passport-local": {
+      "version": "0.1.6",
+      "dependencies": {
+        "pkginfo": {
+          "version": "0.2.3"
+        }
+      }
+    },
+    "glob": {
+      "version": "3.2.1",
+      "dependencies": {
+        "minimatch": {
+          "version": "0.2.12",
+          "dependencies": {
+            "lru-cache": {
+              "version": "2.3.0"
+            },
+            "sigmund": {
+              "version": "1.0.0"
+            }
+          }
+        },
+        "graceful-fs": {
+          "version": "1.2.2"
+        },
+        "inherits": {
+          "version": "1.0.0"
+        }
+      }
+    },
+    "mongodb": {
+      "version": "1.3.10",
+      "dependencies": {
+        "bson": {
+          "version": "0.1.9"
+        },
+        "kerberos": {
+          "version": "0.0.2"
+        }
+      }
+    }
+  }
+}

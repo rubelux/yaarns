@@ -1,0 +1,28 @@
+{
+  "name": "yaarns",
+  "description": "My Mojito application",
+  "version": "0.0.1",
+  "author": {
+    "name": "Your Name",
+    "email": "nobody@yahoo-inc.com"
+  },
+  "contributors": [
+    {
+      "name": "Your Name",
+      "email": "nobody@yahoo-inc.com"
+    }
+  ],
+  "dependencies": {
+    "mojito": "~0.5.9pr1",
+    "express": "~2.5.11",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "glob": "~3.2.1",
+    "mongodb": "~1.3.10",
+    "less-middleware": "~0.1.12",
+    "mojito-shaker": "~4.0.24"
+  },
+  "engines": {
+    "node": ">0.6"
+  }
+}

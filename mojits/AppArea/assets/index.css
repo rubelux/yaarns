@@ -1,0 +1,9 @@
+.appMenu{background-color:#31313e !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:hidden}
+.appMenu .pure-menu{background:transparent;border:0}
+.appMenu .pure-menu .pure-menu-open{background:#31313e !important}
+.appMenu .pure-menu .pure-menu-heading{margin:0 !important;background-color:#31313e !important}
+.appMenu li{background-color:#34343b !important}
+.appMenu li a{color:#fff}
+.appMenu li a:hover,.appMenu li a:focus{background-color:#2e2e41 !important}
+.appMenuClose{width:86px !important}
+.appMenuOpen{width:200px !important}

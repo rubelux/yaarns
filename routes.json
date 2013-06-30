@@ -1,0 +1,29 @@
+[{
+    "settings": [ "master" ],
+    "root":{
+    	"verbs":["get"],
+    	"path":"/",
+    	"call":"body.index"
+    },
+    "content":{
+    	"verbs":["get"],
+    	"path":"/content",
+    	"call": "content.index"
+    },
+	"appArea":{
+    	"verbs":["get"],
+    	"path":"/appArea",
+    	"call": "appArea.index"
+    },
+    "userArea":{
+    	"verbs":["get"],
+    	"path":"/userArea",
+    	"call": "userArea.index"
+    },
+       "storyArea":{
+    	"verbs":["get"],
+    	"path":"/storyArea",
+    	"call": "storyArea.index"
+    }
+
+}]

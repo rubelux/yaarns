@@ -1,0 +1,51 @@
+@mainMenuColor: #31313e;
+
+.userMenu{
+	background-color: @mainMenuColor !important;
+	position: relative;
+	z-index: 1000;
+	float: left;
+	height: 100%;
+	overflow-x: hidden; 
+
+};
+
+.userMenu .pure-menu{
+	background: transparent;
+    border: 0;
+};
+
+.userMenu .pure-menu .pure-menu-open {
+    background: @mainMenuColor !important;
+};
+
+.userMenu .pure-menu .pure-menu-heading{
+ margin: 0px !important;
+ background-color: @mainMenuColor !important;
+};
+
+
+
+.userMenu li{
+	background-color: desaturate(@mainMenuColor, 5%) !important;
+};
+
+.userMenu li a{
+	color: white;
+};
+
+.userMenu li a:hover, .userMenu li a:focus{
+	background-color: softlight(#ff6600, #000000) !important;
+};
+
+.userMenuClose{
+	width: 86px !important;
+}
+
+.userMenuOpen{
+	width: 200px !important;
+}
+
+
+
+
