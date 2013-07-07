@@ -1,12 +1,29 @@
 @mainMenuColor: #31313e;
 
+/*green theme*/
+@colorButtonsTheme: #43eebf;
+@colorButtonsThemeHover:#00d3b2;
+
+#appMenuExterCont{
+	overflow: hidden;
+}
+
+#appMenuInnerCont{
+	width: 200px;
+	margin-left: -124px;
+}
+
+
+
+
 .appMenu{
 	background-color: @mainMenuColor !important;
 	position: relative;
 	z-index: 1000;
 	float: left;
 	height: 100%;
-	overflow-x: hidden; 
+	overflow-x: auto;
+	overflow-y: hidden;
 
 }
 
@@ -24,26 +41,71 @@
  background-color: @mainMenuColor !important;
 }
 
-
-
-.appMenu li{
-	background-color: desaturate(@mainMenuColor, 5%) !important;
-}
-
-.appMenu li a{
+.appMenu .pure-menu li a{
 	color: white;
 }
 
-.appMenu li a:hover, .appMenu li a:focus{
-	background-color: softlight(#ff6600, #000000);  !important;
+
+/************** search button ***********/
+@colorSbt: #5a5a66;
+
+#search-theme{
+	background-color: @colorSbt !important;
 }
 
-.appMenuClose{
-	width: 86px !important;
+#search-theme:hover, #search-theme:focus{
+	background-color: saturate(@colorSbt, 10%) !important;
+
 }
 
-.appMenuOpen{
-	width: 200px !important;
+
+
+/*Icons */
+
+/*Search icon*/
+
+.searchIcon{
+
+  display: block;
+  text-indent: -9999px;
+  width: 85px;
+  height: 65px;
+  background:url(/static/AppArea/assets/imgs/icons/search-icon.svg) no-repeat left top;
+  background-size: 60px 60px;
+}
+
+
+/************** create story button ***********/
+#green-theme{
+	background-color: @colorButtonsTheme !important;
+}
+
+#green-theme:hover, #green-theme:focus{
+	background-color: @colorButtonsThemeHover !important;
+}
+
+
+
+/*Icons */
+
+/*Search icon*/
+
+.searchIcon{
+
+  display: block;
+  text-indent: -9999px;
+  width: 85px;
+  height: 65px;
+  background:url(/static/AppArea/assets/imgs/icons/search-icon.svg) no-repeat left top;
+  background-size: 60px 60px;
+}
+
+
+/*General*/
+
+#clickOverBase{
+	width: 100%;
+	height: 100%;
 }
 
 

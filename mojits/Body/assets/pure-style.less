@@ -1,6 +1,15 @@
 @import "elements.less"; /*source from http://lesselements.com/*/
 
+/*Global variables*/
 @color: #F0F0F0;
+@colorBase: #F5F5F5;
+@colorMeddium: #EEE;
+@transparency: #000;
+/*green theme*/
+@colorButtonsTheme: #43eebf;
+@colorButtonsThemeHover:#00d3b2;
+
+
 /*import fundation*/
 
 /*import base*/
@@ -15,13 +24,11 @@
 @import "pure_less/forms-core.less";
 
 
-/*import forms*/
-@import "pure_less/grids-core.less";
-@import "pure_less/grids-units.less";
-
 /*import grids*/
 @import "pure_less/grids-core.less";
+@import "pure_less/grids-nr.less";
 @import "pure_less/grids-units.less";
+@import "pure_less/grids.less";
 
 
 /*import menus*/
@@ -32,16 +39,67 @@
 
 
 
-
-@colorBase: #F5F5F5;
-@colorMeddium: #EEE;
-@transparency: #000;
-
-
-
+/*green theme*/
 .pure-test{
   color: @color;
   .gradient(@colorBase, @colorMeddium, @transparency);
 
+};
+
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus {
+  background-color: @colorButtonsThemeHover;
+
+};
+
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active {
+	background-color: @colorButtonsThemeHover;
+   
+};
+
+.pure-button{
+	width:100%;
+    color: #444; /* rgba not supported (IE 8) */
+    color: rgba(0, 0, 0, 0.80); /* rgba supported */
+    *color: #444; /* IE 6 & 7 */
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color:  @colorButtonsTheme;
+
+}; 
+
+
+/*generals helpers*/
+
+.float-left{
+ float:left;
 }
+.float-right{
+	float: right;
+}
+
+.clear-fix:after
+{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear-fix
+{
+    zoom: 1;
+}
+
+.make-block{
+	display: block;
+}
+
 

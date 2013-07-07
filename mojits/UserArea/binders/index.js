@@ -34,7 +34,7 @@ YUI.add('UserAreaBinderIndex', function(Y, NAME) {
             this.node = node;
             this._isAnimated = false;
            
-            node.on('mouseenter', function(e){
+        /*    node.on('mouseenter', function(e){
                    
                     var _this = e.target
                      ,  classTarget = 'appMenuClose';
@@ -80,7 +80,7 @@ YUI.add('UserAreaBinderIndex', function(Y, NAME) {
                 });
 
 
-
+        */
 
            
         }

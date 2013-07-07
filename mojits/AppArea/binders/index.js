@@ -30,59 +30,108 @@ YUI.add('AppAreaBinderIndex', function(Y, NAME) {
          * @param node {Node} The DOM node to which this mojit is attached.
          */
         bind: function(node) {
-            var me = this;
+
             this.node = node;
-            this._isAnimated = false;
-           
-            node.on('mouseenter', function(e){
-                   
-                    var _this = e.target
-                     ,  classTarget = 'appMenuClose';
+            
 
-                    if(this.isAnimated){ return };
-                     Y.log('entra')
-                    if(_this.hasClass(classTarget)){this.removeClass(classTarget)};
-                    this._isAnimated =true;
+            var me = this.node
+             ,  clickOverBase = this.node.one('#clickOverBase')
+             ,  _isAnimated   = false
+             ,  _isHovered    = false;
 
-                    _this.transition({
-                        easing: 'ease-out',
+            function animation(action, target){
+                
+                if(_isAnimated){ return };
+                    _isAnimated =true;
+
+                switch(action){
+                    case 'open':
+
+                    target.transition({
+                        easing: 'ease',
                         duration: 0.3, // seconds
-                        width: '200px'
+                        marginLeft: '0'
                     }, function() {
-                        _this.addClass('appMenuOpen');
-                        this._isAnimated = false;
-                        Y.log('pasa')
-                    
+                        _isAnimated = false;
+                        
                     });
-                });
 
-            node.on('mouseleave', function(e){
-                   
+                    break;
+
+                    case 'close':
+                    Y.log(_isHovered)
+                   // if(_isHovered)return;
+
+                    target.transition({
+                        easing: 'ease',
+                        duration: 0.2, // seconds
+                        marginLeft: '-114px'
+                    }, function() {
+                        target.setAttribute('style', '')
+                      
+                        _isAnimated = false;
+                    });
+
+                    break;
+                }
+                
+            } 
+
+            //base menu
+            
+            clickOverBase.on('mouseenter', function(e){
+                _isHovered = true;
+                e.stopPropagation();
+                e.preventDefault();
+
+                var _this = e.target
+                 ,  classTarget = 'appMenuClose';
+
+                
+                 
+                animation('open', me.one('#appMenuInnerCont'))
+                openMenu = true;
+            });
+
+            clickOverBase.on('mouseout', function(e){
+                
+                e.stopPropagation();
+                e.preventDefault();
+
                 var _this = e.target
                  ,  classTarget = 'appMenuOpen';
 
-                    if(this.isAnimated){ return };
-                     Y.log('entra')
-                    if(_this.hasClass(classTarget)){this.removeClass(classTarget)};
-                    this._isAnimated =true;
-
-                    _this.transition({
-                        easing: 'ease-in',
-                        duration: 0.4, // seconds
-                        width: '86px'
-                    }, function() {
-                        _this.setAttribute('style', '')
-                        _this.addClass('appMenuClose');
-                        this._isAnimated = false;
-                        Y.log('pasa')
-                    
-                    });
-                });
+                animation('close', me.one('#appMenuInnerCont')) 
+                _isHovered = false;
+            });
 
 
+            //bottons
 
+            this.node.delegate('click', function(e){
+                //
+                Y.log('this  '+ e.currentTarget)
+            }, 'li');
 
-           
+             this.node.delegate('mouseenter', function(e){
+                _isHovered = true;
+                e.stopPropagation();
+                e.preventDefault();
+                
+                if(_isAnimated){ return };
+                    animation('open', me.one('#appMenuInnerCont'))
+            }, 'li');
+
+            this.node.delegate('mouseout', function(e){
+                
+                e.stopPropagation();
+                e.preventDefault();
+
+                if(_isAnimated){ return };
+                    animation('close', me.one('#appMenuInnerCont'))
+
+                _isHovered = false;     
+            }, 'li'); 
         }
 
     };

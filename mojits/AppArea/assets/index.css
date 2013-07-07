@@ -1,9 +1,14 @@
-.appMenu{background-color:#31313e !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:hidden}
+#appMenuExterCont{overflow:hidden}
+#appMenuInnerCont{width:200px;margin-left:-124px}
+.appMenu{background-color:#31313e !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:auto;overflow-y:hidden}
 .appMenu .pure-menu{background:transparent;border:0}
 .appMenu .pure-menu .pure-menu-open{background:#31313e !important}
 .appMenu .pure-menu .pure-menu-heading{margin:0 !important;background-color:#31313e !important}
-.appMenu li{background-color:#34343b !important}
-.appMenu li a{color:#fff}
-.appMenu li a:hover,.appMenu li a:focus{background-color:#2e2e41 !important}
-.appMenuClose{width:86px !important}
-.appMenuOpen{width:200px !important}
+.appMenu .pure-menu li a{color:#fff}
+#search-theme{background-color:#5a5a66 !important}
+#search-theme:hover,#search-theme:focus{background-color:#505070 !important}
+.searchIcon{display:block;text-indent:-9999px;width:85px;height:65px;background:url(/static/AppArea/assets/imgs/icons/search-icon.svg) no-repeat left top;background-size:60px 60px}
+#green-theme{background-color:#43eebf !important}
+#green-theme:hover,#green-theme:focus{background-color:#00d3b2 !important}
+.searchIcon{display:block;text-indent:-9999px;width:85px;height:65px;background:url(/static/AppArea/assets/imgs/icons/search-icon.svg) no-repeat left top;background-size:60px 60px}
+#clickOverBase{width:100%;height:100%}
