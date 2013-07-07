@@ -79,7 +79,7 @@ YUI.add('AppAreaBinderIndex', function(Y, NAME) {
 
             //base menu
             
-            clickOverBase.on('mouseenter', function(e){
+         /*   clickOverBase.on('mouseenter', function(e){
                 _isHovered = true;
                 e.stopPropagation();
                 e.preventDefault();
@@ -103,12 +103,12 @@ YUI.add('AppAreaBinderIndex', function(Y, NAME) {
 
                 animation('close', me.one('#appMenuInnerCont')) 
                 _isHovered = false;
-            });
+            });*/
 
 
             //bottons
 
-            this.node.delegate('click', function(e){
+         /*   this.node.delegate('click', function(e){
                 //
                 Y.log('this  '+ e.currentTarget)
             }, 'li');
@@ -131,7 +131,7 @@ YUI.add('AppAreaBinderIndex', function(Y, NAME) {
                     animation('close', me.one('#appMenuInnerCont'))
 
                 _isHovered = false;     
-            }, 'li'); 
+            }, 'li');  */
         }
 
     };
