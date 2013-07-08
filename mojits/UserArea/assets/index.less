@@ -1,4 +1,33 @@
-@mainMenuColor: #31313e;
+@mainMenuColor: #fff;
+
+/*green theme*/
+@colorButtonsTheme: #43eebf;
+@colorButtonsThemeHover:#00d3b2;
+
+#userMenuExterCont{
+	overflow: hidden;
+	height: 100%;
+}
+
+#userMenuInnerCont{
+	width: 200px;
+	height: 100%;
+	margin-left: -124px;
+	-webkit-transition: margin-left 0.5s ease;
+	-moz-transition: margin-left 0.5s ease;
+	-o-transition: margin-left 0.5s ease;
+	-ms-transition: margin-left 0.5s ease;
+	transition: margin-left 0.5s ease;
+	
+}
+
+
+#userMenuInnerCont:hover{
+	margin-left: 0;
+}
+
+
+
 
 .userMenu{
 	background-color: @mainMenuColor !important;
@@ -6,45 +35,97 @@
 	z-index: 1000;
 	float: left;
 	height: 100%;
-	overflow-x: hidden; 
+	overflow-x: auto;
+	overflow-y: hidden;
 
-};
+}
 
 .userMenu .pure-menu{
 	background: transparent;
     border: 0;
-};
+}
 
 .userMenu .pure-menu .pure-menu-open {
     background: @mainMenuColor !important;
-};
+}
 
 .userMenu .pure-menu .pure-menu-heading{
  margin: 0px !important;
  background-color: @mainMenuColor !important;
-};
+}
 
-
-
-.userMenu li{
-	background-color: desaturate(@mainMenuColor, 5%) !important;
-};
-
-.userMenu li a{
+.userMenu .pure-menu li a{
 	color: white;
-};
-
-.userMenu li a:hover, .userMenu li a:focus{
-	background-color: softlight(#ff6600, #000000) !important;
-};
-
-.userMenuClose{
-	width: 86px !important;
 }
 
-.userMenuOpen{
-	width: 200px !important;
+
+/************** search button ***********/
+@colorSbt: #5a5a66;
+
+#search-theme{
+	background-color: @colorSbt !important;
 }
+
+#search-theme:hover, #search-theme:focus{
+	background-color: saturate(@colorSbt, 10%) !important;
+
+}
+
+
+
+/*Icons */
+
+/*Search icon*/
+
+.searchIcon{
+
+  display: block;
+  text-indent: -9999px;
+  width: 85px;
+  height: 65px;
+  background:url(/static/AppArea/assets/imgs/icons/search-icon.svg) no-repeat left top;
+  background-size: 60px 60px;
+}
+
+
+/************** create story button ***********/
+#green-theme{
+	background-color: @colorButtonsTheme !important;
+}
+
+#green-theme:hover, #green-theme:focus{
+	background-color: @colorButtonsThemeHover !important;
+}
+
+
+
+/*Icons */
+
+/*Search icon*/
+
+.searchIcon{
+
+  display: block;
+  text-indent: -9999px;
+  width: 85px;
+  height: 65px;
+  background:url(/static/AppArea/assets/imgs/icons/search-icon.svg) no-repeat left top;
+  background-size: 60px 60px;
+}
+
+
+/*General*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
