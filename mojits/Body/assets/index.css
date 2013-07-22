@@ -1,5 +1,6 @@
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 html,body{height: 100% !important; overflow-x: auto; overflow-y: hidden;  -webkit-overflow-scroll: touch;}
-.global{background-color: #e6e6e6; height: 100%; }
+.global{background-color: #e6e6e6; height: 100%; overflow: hidden; }
 
 
 

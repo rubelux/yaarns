@@ -9,6 +9,9 @@
 @colorButtonsTheme: #43eebf;
 @colorButtonsThemeHover:#00d3b2;
 
+/*padding*/
+@paddingG: 14px; 
+
 
 /*import fundation*/
 
@@ -25,9 +28,6 @@
 
 
 /*import grids*/
-@import "pure_less/grids-core.less";
-@import "pure_less/grids-nr.less";
-@import "pure_less/grids-units.less";
 @import "pure_less/grids.less";
 
 
@@ -37,7 +37,29 @@
 /*extrax*/
 @import "extras.less";
 
+/*fonts*/
 
+@font-face{ font-family: 'nexa bold'; 
+                    src: url('webfont/nexa_bold-webfont.eot'); 
+                    src: url('webfont/nexa_bold-webfont.eot?#iefix') format('embedded-opentype'), 
+                    url('webfont/nexa_bold-webfont.woff') format('woff'), 
+                    url('webfont/nexa_bold-webfont.ttf') format('truetype'), 
+                    url('webfont/nexa_bold-webfont.svg#webfont') format('svg'); }
+
+@font-face{ font-family: 'nexa light'; 
+                    src: url('webfont/light-webfont.eot'); 
+                    src: url('webfont/nexa_light-webfont.eot?#iefix') format('embedded-opentype'), 
+                    url('webfont/nexa_light-webfont.woff') format('woff'), 
+                    url('webfont/nexa_light-webfont.ttf') format('truetype'), 
+                    url('webfont/nexa_light-webfont.svg#webfont') format('svg'); }                    
+
+html, button, input, select, textarea{
+font-family: 'nexa light';
+font-style: normal;
+font-weight: 400; 
+letter-spacing: 0.05em;
+text-rendering: optimizeLegibility;
+}
 
 /*green theme*/
 .pure-test{
@@ -100,6 +122,27 @@
 
 .make-block{
 	display: block;
+}
+
+.circular-icons{
+    margin-top: 7px;
+    text-align: center;
+}
+
+.circular-icons > img{
+    border-radius: 80%;
+}
+
+.AddpaddingG{
+    padding: 10px @paddingG;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.hoCenterText{
+    text-align: center;
 }
 
 

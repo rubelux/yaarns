@@ -13,3 +13,4 @@
 .userMenu .pure-menu li a:hover{background-color:#fff}
 .userMenu .pure-menu li a{color:#31313e}
 .userTelling{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/UserArea/assets/imgs/icons/user_telling_ico.svg") no-repeat scroll center center / 60% 80% transparent }
+.storyArea{float:left}

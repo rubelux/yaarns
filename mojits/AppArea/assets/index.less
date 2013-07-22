@@ -4,15 +4,22 @@
 @colorButtonsTheme: #43eebf;
 @colorButtonsThemeHover:#00d3b2;
 
+@unitSize: 86px;
+@withNumColumns:3;
+@viewableColumn:1;
+@totalviewColumn: @withNumColumns - @viewableColumn;
+
+
+
 #appMenuExterCont{
 	overflow: hidden;
 	height: 100%;
 }
 
 #appMenuInnerCont{
-	width: 200px;
+	width: @unitSize * @withNumColumns;
 	height: 100%;
-	margin-left: -124px;
+	margin-left: -(@unitSize * @totalviewColumn);  
 	-webkit-transition: margin-left 0.5s ease;
 	-moz-transition: margin-left 0.5s ease;
 	-o-transition: margin-left 0.5s ease;
@@ -39,6 +46,10 @@
 	overflow-x: auto;
 	overflow-y: hidden;
 
+}
+
+.appMenu li{
+	height: @unitSize;
 }
 
 .appMenu .pure-menu{
@@ -74,19 +85,7 @@
 
 
 
-/*Icons */
 
-/*Search icon*/
-
-.searchIcon{
-
-  display: block;
-  text-indent: -9999px;
-  width: 85px;
-  height: 65px;
-  background:url(/static/AppArea/assets/imgs/icons/search-icon.svg) no-repeat left top;
-  background-size: 60px 60px;
-}
 
 
 /************** create story button ***********/
@@ -108,14 +107,12 @@
 
   display: block;
   text-indent: -9999px;
-  width: 85px;
-  height: 65px;
-  background:url(/static/AppArea/assets/imgs/icons/search-icon.svg) no-repeat left top;
-  background-size: 60px 60px;
+  width: 86px;
+  height: 86px;
+  background:url("/static/AppArea/assets/imgs/icons/search-icon.svg") no-repeat scroll center center / 60px 60px transparent;
+ /* set svg size by this */
 }
 
-
-/*General*/
 
 
 

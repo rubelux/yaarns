@@ -5,10 +5,9 @@
 .pure-menu-open>ul{left:0;top:0;visibility:visible}
 .pure-menu-open>ul:focus{outline:0}
 .pure-menu li{position:relative}
-.pure-menu a,.pure-menu .pure-menu-heading{display:block;color:inherit;line-height:1.5em;padding:20px 20px;text-decoration:none;white-space:nowrap}
+.pure-menu a,.pure-menu .pure-menu-heading{display:block;color:inherit;line-height:1.5em;text-decoration:none;white-space:nowrap}
 .pure-menu.pure-menu-horizontal>.pure-menu-heading{display:inline-block;*display:inline;zoom:1;margin:0;vertical-align:middle}
 .pure-menu.pure-menu-horizontal>ul{display:inline-block;*display:inline;zoom:1;vertical-align:middle;height:2.4em}
-.pure-menu li a{padding:15px 15px}
 .pure-menu-can-have-children>.pure-menu-label:after{content:'\25B8';float:right;font-family:'Lucida Grande','Lucida Sans Unicode','DejaVu Sans',sans-serif;margin-right:-20px;margin-top:-1px}
 .pure-menu-can-have-children>.pure-menu-label{padding-right:30px}
 .pure-menu-separator{background-color:#dfdfdf;display:block;height:1px;font-size:0;margin:7px 2px;overflow:hidden}
