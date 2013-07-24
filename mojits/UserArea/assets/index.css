@@ -1,7 +1,8 @@
 #userMenuExterCont{overflow:hidden;height:100%}
-#userMenuInnerCont{width:258px;height:100%;margin-left:0;margin-left:-172px;-webkit-transition:margin-left .5s ease;-moz-transition:margin-left .5s ease;-o-transition:margin-left .5s ease;-ms-transition:margin-left .5s ease;transition:margin-left .5s ease}
+#userMenuInnerCont{width:258px;height:100%;-webkit-transition:margin-left .5s ease;-moz-transition:margin-left .5s ease;-o-transition:margin-left .5s ease;-ms-transition:margin-left .5s ease;transition:margin-left .5s ease}
 #userMenuInnerCont:hover{margin-left:0}
 .userMenu li{height:86px}
+.userMenu h4{color:#31313e}
 .userMenu li>div{height:100%}
 .userMenu .text2lines{line-height:.95em}
 .userMenu .text2lines span{font-size:75%;font-weight:normal;margin-left:.75em}

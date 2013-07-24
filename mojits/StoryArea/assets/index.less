@@ -1,4 +1,4 @@
-@mainMenuColor: #e8e7ed;
+@mainMenuColor: #9fa2b3;
 
 /*green theme*/
 @colorButtonsTheme: #43eebf;
@@ -8,16 +8,16 @@
 @viewableColumn:1;
 @totalviewColumn: @withNumColumns - @viewableColumn;
 
-#userMenuExterCont{
+#storyAreaExterCont{
 	overflow: hidden;
 	height: 100%;
 }
 
-#userMenuInnerCont{
+#storyAreaInnerCont{
 	width: @unitSize * @withNumColumns;
 	height: 100%;
 	margin-left: 0;
-	margin-left: -(@unitSize * @totalviewColumn); 
+	/*margin-left: -(@unitSize * @totalviewColumn); */
 	-webkit-transition: margin-left 0.5s ease;
 	-moz-transition: margin-left 0.5s ease;
 	-o-transition: margin-left 0.5s ease;
@@ -27,30 +27,30 @@
 }
 
 
-#userMenuInnerCont:hover{
+#storyAreaInnerCont:hover{
 	margin-left: 0;
 }
 
-.userMenu li{
+.storyArea li{
 	height: @unitSize;
 }
 
-.userMenu li > div{
+.storyArea li > div{
 	height: 100%;
 }
 
-.userMenu .text2lines{
+.storyArea .text2lines{
 	line-height: 0.95em;
 }
 
-.userMenu .text2lines span{
+.storyArea .text2lines span{
 	font-size: 75%;
 	font-weight: normal;
 	margin-left: 0.75em;
 }
 
 
-.userMenu{
+.storyArea{
 	background-color: @mainMenuColor !important;
 	position: relative;
 	z-index: 1000;
@@ -61,30 +61,30 @@
 
 }
 
-.userMenu .pure-menu{
+.storyArea .pure-menu{
 	background: transparent;
     border: 0;
 }
 
-.userMenu .pure-menu .pure-menu-open {
+.storyArea .pure-menu .pure-menu-open {
     background: @mainMenuColor !important;
 }
 
-.userMenu .pure-menu .pure-menu-heading{
+.storyArea .pure-menu .pure-menu-heading{
  margin: 0px !important;
  background-color: @mainMenuColor !important;
 }
 
-.userMenu .pure-menu li a{
+.storyArea .pure-menu li a{
 	background-color: #fff;
 }
 
-.userMenu .pure-menu li a:hover{
+.storyArea .pure-menu li a:hover{
 	background-color: saturate(#fff, 10%);
 }
 
 
-.userMenu .pure-menu li a{
+.storyArea .pure-menu li a{
 	color: #31313e;
 }
 

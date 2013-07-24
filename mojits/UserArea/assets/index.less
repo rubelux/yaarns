@@ -1,4 +1,5 @@
 @mainMenuColor: #e8e7ed;
+@textColor: #31313E;
 
 /*green theme*/
 @colorButtonsTheme: #43eebf;
@@ -16,8 +17,8 @@
 #userMenuInnerCont{
 	width: @unitSize * @withNumColumns;
 	height: 100%;
-	margin-left: 0;
-	margin-left: -(@unitSize * @totalviewColumn); 
+	
+	/*margin-left: -(@unitSize * @totalviewColumn); */
 	-webkit-transition: margin-left 0.5s ease;
 	-moz-transition: margin-left 0.5s ease;
 	-o-transition: margin-left 0.5s ease;
@@ -27,12 +28,18 @@
 }
 
 
+
+
 #userMenuInnerCont:hover{
 	margin-left: 0;
 }
 
 .userMenu li{
 	height: @unitSize;
+}
+
+.userMenu h4{
+	color: @textColor;
 }
 
 .userMenu li > div{

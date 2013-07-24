@@ -33,14 +33,7 @@
 
                             }
                         }
-                    },
-                    "assets":{
-                            "top":{
-                                "css":[
-                                    "static/Body/assets/pure-style.css"
-                                ]
-                            }
-                    }   
+                    }  
                 }
             }    
         }
