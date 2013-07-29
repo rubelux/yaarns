@@ -7,6 +7,7 @@ html,button,input,select,textarea{font-family:sans-serif}
 body{margin:0}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
+<<<<<<< HEAD
 h1,h2,h3,h4,h5,h6{letter-spacing:0 !important}
 h1{font-size:2em;margin:.67em 0}
 h2{font-size:1.5em;margin:.83em 0}
@@ -14,6 +15,14 @@ h3{font-size:1.17em;margin:1em 0}
 h4{font-size:1em;margin:1.33em 0}
 h5{font-size:.83em;margin:1.67em 0}
 h6{font-size:.67em;margin:2.33em 0}
+=======
+h1{font-size:1.7em;margin:.67em 0}
+h2{font-size:1.2em;margin:.83em 0}
+h3{font-size:.87em;margin:1em 0}
+h4{font-size:.7em;letter-spacing:.1em;margin:1.33em 0}
+h5{font-size:.6em;margin:1.67em 0}
+h6{font-size:.5em;margin:2.33em 0}
+>>>>>>> 45b26880265b4d0ae375bb87a32d3c70cde14df5
 abbr[title]{border-bottom:1px dotted}
 b,strong{font-weight:bold}
 blockquote{margin:1em 40px}
