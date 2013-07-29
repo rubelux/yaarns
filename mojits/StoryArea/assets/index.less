@@ -1,4 +1,4 @@
-@mainMenuColor: #e8e7ed;
+@mainMenuColor: #9ea1b0;
 
 /*green theme*/
 @colorButtonsTheme: #43eebf;
@@ -8,16 +8,15 @@
 @viewableColumn:1;
 @totalviewColumn: @withNumColumns - @viewableColumn;
 
-#userMenuExterCont{
+#storyMenuExterCont{
 	overflow: hidden;
 	height: 100%;
 }
 
-#userMenuInnerCont{
+#storyMenuInnerCont{
 	width: @unitSize * @withNumColumns;
 	height: 100%;
-	margin-left: 0;
-	margin-left: -(@unitSize * @totalviewColumn); 
+	/*margin-left: -(@unitSize * @totalviewColumn);  */
 	-webkit-transition: margin-left 0.5s ease;
 	-moz-transition: margin-left 0.5s ease;
 	-o-transition: margin-left 0.5s ease;
@@ -27,30 +26,42 @@
 }
 
 
-#userMenuInnerCont:hover{
+#storyMenuInnerCont:hover{
 	margin-left: 0;
 }
 
-.userMenu li{
+.storyMenu li{
 	height: @unitSize;
 }
 
-.userMenu li > div{
+.marginHalf{
+	margin: @unitSize/2 0;
+} 
+
+.height2x{
+	height: 2 * @unitSize !important;
+}
+
+.height3x{
+	height: 2 * @unitSize !important;
+}
+
+.storyMenu li > div{
 	height: 100%;
 }
 
-.userMenu .text2lines{
+.storyMenu .text2lines{
 	line-height: 0.95em;
 }
 
-.userMenu .text2lines span{
+.storyMenu .text2lines span{
 	font-size: 75%;
 	font-weight: normal;
 	margin-left: 0.75em;
 }
 
 
-.userMenu{
+.storyMenu{
 	background-color: @mainMenuColor !important;
 	position: relative;
 	z-index: 1000;
@@ -61,30 +72,30 @@
 
 }
 
-.userMenu .pure-menu{
+.storyMenu .pure-menu{
 	background: transparent;
     border: 0;
 }
 
-.userMenu .pure-menu .pure-menu-open {
+.storyMenu .pure-menu .pure-menu-open {
     background: @mainMenuColor !important;
 }
 
-.userMenu .pure-menu .pure-menu-heading{
+.storyMenu .pure-menu .pure-menu-heading{
  margin: 0px !important;
  background-color: @mainMenuColor !important;
 }
 
-.userMenu .pure-menu li a{
+.storyMenu .pure-menu li a{
 	background-color: #fff;
 }
 
-.userMenu .pure-menu li a:hover{
+.storyMenu .pure-menu li a:hover{
 	background-color: saturate(#fff, 10%);
 }
 
 
-.userMenu .pure-menu li a{
+.storyMenu .pure-menu li a{
 	color: #31313e;
 }
 
@@ -100,14 +111,30 @@
 
 
 
-.userTelling{
+.storyBlockState{
 
   display: block;
   text-indent: -9999px;
   width: 86px;
   height: 86px;
-  background:url("/static/UserArea/assets/imgs/icons/user_telling_ico.svg") no-repeat scroll center center / 60% 80% transparent
+ /* background:url("/static/UserArea/assets/imgs/icons/user_telling_ico.svg") no-repeat scroll center center / 60% 80% transparent */
  /* set svg size by this */
+ background:url("/static/StoryArea/assets/imgs/icons/block_icon.png") no-repeat scroll top left transparent;
+
+
+}
+
+.whatchingStory{
+
+  display: block;
+  text-indent: -9999px;
+  width: 86px;
+  height: 86px;
+ /* background:url("/static/UserArea/assets/imgs/icons/user_telling_ico.svg") no-repeat scroll center center / 60% 80% transparent */
+ /* set svg size by this */
+ background:url("/static/StoryArea/assets/imgs/icons/whatching_icon.png") no-repeat scroll top left transparent;
+
+
 }
 
 

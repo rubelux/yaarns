@@ -1,16 +1,20 @@
-#userMenuExterCont{overflow:hidden;height:100%}
-#userMenuInnerCont{width:258px;height:100%;margin-left:0;margin-left:-172px;-webkit-transition:margin-left .5s ease;-moz-transition:margin-left .5s ease;-o-transition:margin-left .5s ease;-ms-transition:margin-left .5s ease;transition:margin-left .5s ease}
-#userMenuInnerCont:hover{margin-left:0}
-.userMenu li{height:86px}
-.userMenu li>div{height:100%}
-.userMenu .text2lines{line-height:.95em}
-.userMenu .text2lines span{font-size:75%;font-weight:normal;margin-left:.75em}
-.userMenu{background-color:#e8e7ed !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:auto;overflow-y:hidden}
-.userMenu .pure-menu{background:transparent;border:0}
-.userMenu .pure-menu .pure-menu-open{background:#e8e7ed !important}
-.userMenu .pure-menu .pure-menu-heading{margin:0 !important;background-color:#e8e7ed !important}
-.userMenu .pure-menu li a{background-color:#fff}
-.userMenu .pure-menu li a:hover{background-color:#fff}
-.userMenu .pure-menu li a{color:#31313e}
-.userTelling{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/UserArea/assets/imgs/icons/user_telling_ico.svg") no-repeat scroll center center / 60% 80% transparent }
+#storyMenuExterCont{overflow:hidden;height:100%}
+#storyMenuInnerCont{width:258px;height:100%;-webkit-transition:margin-left .5s ease;-moz-transition:margin-left .5s ease;-o-transition:margin-left .5s ease;-ms-transition:margin-left .5s ease;transition:margin-left .5s ease}
+#storyMenuInnerCont:hover{margin-left:0}
+.storyMenu li{height:86px}
+.marginHalf{margin:43px 0}
+.height2x{height:172px !important}
+.height3x{height:172px !important}
+.storyMenu li>div{height:100%}
+.storyMenu .text2lines{line-height:.95em}
+.storyMenu .text2lines span{font-size:75%;font-weight:normal;margin-left:.75em}
+.storyMenu{background-color:#9ea1b0 !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:auto;overflow-y:hidden}
+.storyMenu .pure-menu{background:transparent;border:0}
+.storyMenu .pure-menu .pure-menu-open{background:#9ea1b0 !important}
+.storyMenu .pure-menu .pure-menu-heading{margin:0 !important;background-color:#9ea1b0 !important}
+.storyMenu .pure-menu li a{background-color:#fff}
+.storyMenu .pure-menu li a:hover{background-color:#fff}
+.storyMenu .pure-menu li a{color:#31313e}
+.storyBlockState{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/StoryArea/assets/imgs/icons/block_icon.png") no-repeat scroll top left transparent}
+.whatchingStory{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/StoryArea/assets/imgs/icons/whatching_icon.png") no-repeat scroll top left transparent}
 .storyArea{float:left}
