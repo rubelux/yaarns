@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #storyMenuExterCont{overflow:hidden;height:100%}
 #storyMenuInnerCont{width:258px;height:100%;-webkit-transition:margin-left .5s ease;-moz-transition:margin-left .5s ease;-o-transition:margin-left .5s ease;-ms-transition:margin-left .5s ease;transition:margin-left .5s ease}
 #storyMenuInnerCont:hover{margin-left:0}
@@ -37,6 +38,8 @@
 .userTelling{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/UserArea/assets/imgs/icons/user_telling_ico.svg") no-repeat scroll center center / 60% 80% transparent }
 >>>>>>> 45b26880265b4d0ae375bb87a32d3c70cde14df5
 =======
+=======
+>>>>>>> parent of c55efe6... strory menu
 #userMenuExterCont{overflow:hidden;height:100%}
 #userMenuInnerCont{width:258px;height:100%;margin-left:0;margin-left:-172px;-webkit-transition:margin-left .5s ease;-moz-transition:margin-left .5s ease;-o-transition:margin-left .5s ease;-ms-transition:margin-left .5s ease;transition:margin-left .5s ease}
 #userMenuInnerCont:hover{margin-left:0}
@@ -52,5 +55,8 @@
 .userMenu .pure-menu li a:hover{background-color:#fff}
 .userMenu .pure-menu li a{color:#31313e}
 .userTelling{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/UserArea/assets/imgs/icons/user_telling_ico.svg") no-repeat scroll center center / 60% 80% transparent }
+<<<<<<< HEAD
+>>>>>>> parent of c55efe6... strory menu
+=======
 >>>>>>> parent of c55efe6... strory menu
 .storyArea{float:left}
