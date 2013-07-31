@@ -33,29 +33,8 @@
 
                             }
                         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                     }
                      
-=======
-                    }  
->>>>>>> 45b26880265b4d0ae375bb87a32d3c70cde14df5
-=======
-=======
->>>>>>> parent of c55efe6... strory menu
-                    },
-                    "assets":{
-                            "top":{
-                                "css":[
-                                    "static/Body/assets/pure-style.css"
-                                ]
-                            }
-                    }   
-<<<<<<< HEAD
->>>>>>> parent of c55efe6... strory menu
-=======
->>>>>>> parent of c55efe6... strory menu
                 }
             }    
         }
