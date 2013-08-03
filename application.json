@@ -33,19 +33,8 @@
 
                             }
                         }
-<<<<<<< HEAD
                     }
                      
-=======
-                    },
-                    "assets":{
-                            "top":{
-                                "css":[
-                                    "static/Body/assets/pure-style.css"
-                                ]
-                            }
-                    }   
->>>>>>> parent of 45b2688... Story Area work
                 }
             }    
         }
