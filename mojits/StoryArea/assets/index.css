@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6698b72... a
 #storyMenuExterCont{overflow:hidden;height:100%}
@@ -39,6 +40,22 @@
 .storyArea .pure-menu li a{background-color:#fff}
 .storyArea .pure-menu li a:hover{background-color:#fff}
 .storyArea .pure-menu li a{color:#31313e}
+=======
+#userMenuExterCont{overflow:hidden;height:100%}
+#userMenuInnerCont{width:258px;height:100%;margin-left:0;margin-left:-172px;-webkit-transition:margin-left .5s ease;-moz-transition:margin-left .5s ease;-o-transition:margin-left .5s ease;-ms-transition:margin-left .5s ease;transition:margin-left .5s ease}
+#userMenuInnerCont:hover{margin-left:0}
+.userMenu li{height:86px}
+.userMenu li>div{height:100%}
+.userMenu .text2lines{line-height:.95em}
+.userMenu .text2lines span{font-size:75%;font-weight:normal;margin-left:.75em}
+.userMenu{background-color:#e8e7ed !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:auto;overflow-y:hidden}
+.userMenu .pure-menu{background:transparent;border:0}
+.userMenu .pure-menu .pure-menu-open{background:#e8e7ed !important}
+.userMenu .pure-menu .pure-menu-heading{margin:0 !important;background-color:#e8e7ed !important}
+.userMenu .pure-menu li a{background-color:#fff}
+.userMenu .pure-menu li a:hover{background-color:#fff}
+.userMenu .pure-menu li a{color:#31313e}
+>>>>>>> parent of 45b2688... Story Area work
 .userTelling{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/UserArea/assets/imgs/icons/user_telling_ico.svg") no-repeat scroll center center / 60% 80% transparent }
 >>>>>>> 45b26880265b4d0ae375bb87a32d3c70cde14df5
 =======
