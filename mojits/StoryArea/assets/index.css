@@ -18,3 +18,4 @@
 .storyBlockState{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/StoryArea/assets/imgs/icons/block_icon.png") no-repeat scroll top left transparent}
 .whatchingStory{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/StoryArea/assets/imgs/icons/whatching_icon.png") no-repeat scroll top left transparent}
 .storyArea{float:left}
+.yui3-scrollview-scrollbar{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAYAAAD9yd/wAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABJJREFUeNpiZGBgSGPAAgACDAAIkABoFyloZQAAAABJRU5ErkJggg==");border-radius:3px}
