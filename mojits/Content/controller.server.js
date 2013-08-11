@@ -22,19 +22,32 @@ YUI.add('Content', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
-            ac.models.get('ContentModelFoo').getData(function(err, data) {
-                if (err) {
-                    ac.error(err);
-                    return;
+            var cfg = {
+                view: "index",
+                children: {
+                    dynamic_child: {
+                        type: "ContentText",
+                        config: {
+                            "caller": "Content"
+                       }
+                    },
+                    assets: {
+                        top: [
+                            "/static/contentText/assets/index.css"
+                        ]
+                    }
                 }
-                ac.assets.addCss('./index.css');
-                ac.done({
-                    status: 'Mojito is working.',
-                    data: data
-                });
+            };
+
+            ac.composite.execute(cfg,function(data, meta){
+                // The 'meta' object containing metadata about the children's binders,
+                // assets, configuration, and HTTP header info is passed to the callback.
+                // This 'meta' object is required for binders to execute and attach content
+                // to the DOM.
+                ac.done(data, meta);
             });
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'ContentModelFoo']});
+}, '0.0.1', {requires: ['mojito', 'mojito-composite-addon']});
