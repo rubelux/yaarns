@@ -3,7 +3,7 @@
 #userMenuInnerCont:hover{margin-left:0}
 .userMenu li{height:86px}
 .userMenu li>div{height:100%}
-.userMenu .text2lines{line-height:.95em}
+.userMenu .text2lines{line-height:.7em}
 .userMenu .text2lines span{font-size:75%;font-weight:normal;margin-left:.75em}
 .userMenu{background-color:#e8e7ed !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:auto;overflow-y:hidden}
 .userMenu .pure-menu{background:transparent;border:0}

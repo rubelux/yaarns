@@ -1,8 +1,8 @@
 @mainMenuColor: #9ea1b0;
 
 /*green theme*/
-@colorButtonsTheme: #43eebf;
-@colorButtonsThemeHover:#00d3b2;
+@colorButtonsTheme: #9ea1b0;
+@colorButtonsThemeHover:#5a5a65;
 @unitSize: 86px;
 @withNumColumns:3;
 @viewableColumn:1;
@@ -14,9 +14,13 @@
 }
 
 #storyMenuInnerCont{
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
+
 	width: @unitSize * @withNumColumns;
 	height: 100%;
-	/*margin-left: -(@unitSize * @totalviewColumn);    */
+	margin-left: -(@unitSize * @totalviewColumn);    
 	-webkit-transition: margin-left 0.5s ease;
 	-moz-transition: margin-left 0.5s ease;
 	-o-transition: margin-left 0.5s ease;
@@ -25,13 +29,17 @@
 	
 }
 
+#storyMenuInnerCont > * {
+	color:white;
+}
+
 
 #storyMenuInnerCont:hover{
 	margin-left: 0;
 }
 
 .storyMenu li{
-	height: @unitSize;
+	min-height: @unitSize;
 }
 
 .marginHalf{
@@ -39,11 +47,11 @@
 } 
 
 .height2x{
-	height: 2 * @unitSize !important;
+	min-height: 2 * @unitSize !important;
 }
 
 .height3x{
-	height: 2 * @unitSize !important;
+	min-height: 3 * @unitSize !important;
 }
 
 .storyMenu li > div{
@@ -51,7 +59,7 @@
 }
 
 .storyMenu .text2lines{
-	line-height: 0.95em;
+	line-height: 0.7em;
 }
 
 .storyMenu .text2lines span{
@@ -86,17 +94,58 @@
  background-color: @mainMenuColor !important;
 }
 
-.storyMenu .pure-menu li a{
-	background-color: #fff;
+.storyMenu .pure-menu li a {
+	color: white;	
+	background-color: @colorButtonsTheme;
+	border-top:1px solid #b1b4c0;
+	
 }
 
-.storyMenu .pure-menu li a:hover{
-	background-color: saturate(#fff, 10%);
+.storyMenu .pure-menu li a:last-child {
+	border-top:1px solid #b1b4c0;
+	border-bottom:1px solid #b1b4c0;
+	
+}
+
+.storyMenu .pure-menu li a:hover {
+	color: white;	
+	background-color: @colorButtonsThemeHover;
+}
+
+.storyMenu .pure-menu .active{
+	color: white;
+	background-color: @colorButtonsThemeHover;
 }
 
 
-.storyMenu .pure-menu li a{
-	color: #31313e;
+
+#storyTellersBt{
+	background-color: @colorButtonsThemeHover;
+}
+
+
+.button-circular{
+    position: relative;
+    cursor: hand;
+    cursor: pointer;
+    background-color: @colorButtonsThemeHover;
+}
+
+.button-circular > span{
+    position: absolute;
+    display: none;
+    z-index: 2;
+}
+
+.button-circular:hover > span{
+    position: absolute;
+    top:0;
+    padding-top: 20px;
+    height: 86px;
+    text-align: center;
+    display: block;
+    z-index: 2;
+    background-color: @colorButtonsThemeHover;
 }
 
 
@@ -151,7 +200,9 @@
  	border-radius: 3px;
 }
 
+.button-circular:hover > span{
 
+}	
 
 /* === scrollview container and header styles === */
 

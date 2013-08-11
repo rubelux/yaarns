@@ -9,8 +9,9 @@
 @colorButtonsTheme: #43eebf;
 @colorButtonsThemeHover:#00d3b2;
 
-/*padding*/
+/*sizes units ..padding*/
 @paddingG: 14px; 
+@unitSize: 86px;
 
 
 /*import fundation*/
@@ -125,11 +126,12 @@ text-rendering: optimizeLegibility;
 }
 
 .circular-icons{
-    margin-top: 7px;
+    line-height: @unitSize;
     text-align: center;
 }
 
 .circular-icons > img{
+    vertical-align: middle;
     border-radius: 80%;
 }
 
@@ -144,5 +146,9 @@ text-rendering: optimizeLegibility;
 .hoCenterText{
     text-align: center;
 }
+
+
+
+
 
 

@@ -101,7 +101,49 @@ YUI.add('StoryAreaBinderIndex', function(Y, NAME) {
             Y.log('object scroll offsetHeight height'+ target.get('offsetHeight') );
 
             
+            node.one('#storyTellersBt').on('mouseenter', function(e){
+                var target = this.one('#storyTellersList ul')
+                 ,  targetHeight = target.get('scrollHeight');
 
+                this.one('a').addClass('active');
+                target.addClass('pure-menu-open');
+                target.setStyle('position', 'static');
+
+                target.setStyle('height', '0');
+
+                target.transition({
+                    easing: 'ease-out',
+                    duration: 0.5, // seconds
+                    height: targetHeight+"px" , 
+                }, function() {
+                   // this.remove();
+                });
+
+                
+            })
+
+            node.one('#storyTellersBt').on('mouseleave', function(e){
+                var target = this.one('#storyTellersList ul')
+                 ,  targetHeight = target.get('scrollHeight')
+                 ,  _this = this;
+
+
+                
+                
+
+                target.transition({
+                        easing: 'ease-in',
+                        duration: 0.4, // seconds
+                        height: "0px" , 
+                }, function() {
+                        _this.one('a').removeClass('active');
+                        target.removeClass('pure-menu-open');
+                        target.setStyle('position', '');
+                        target.removeClass('active');
+                        
+                });
+
+            })
 
             
             Y.on('windowresize', function(){Y.log('yess');

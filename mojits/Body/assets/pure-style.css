@@ -233,8 +233,8 @@ table{border-collapse:collapse;border-spacing:0}
 .clear-fix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
 .clear-fix{zoom:1}
 .make-block{display:block}
-.circular-icons{margin-top:7px;text-align:center}
-.circular-icons>img{border-radius:80%}
+.circular-icons{line-height:86px;text-align:center}
+.circular-icons>img{vertical-align:middle;border-radius:80%}
 .AddpaddingG{padding:10px 14px}
 .centerText{text-align:center}
 .hoCenterText{text-align:center}
