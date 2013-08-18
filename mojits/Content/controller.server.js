@@ -22,31 +22,36 @@ YUI.add('Content', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
+      
             var cfg = {
-                view: "index",
-                children: {
-                    dynamic_child: {
-                        type: "ContentText",
-                        config: {
-                            "caller": "Content"
-                       }
+                    view: "index",
+                    children: {
+                        ContentText: {
+                            type: "ContentText",
+                            config: {
+                                "caller": "Content"
+                           }
+                        }
+                        
                     },
                     assets: {
-                        top: [
-                            "/static/contentText/assets/index.css"
-                        ]
+                        top: {
+                            css: [
+                                "/static/ContentText/assets/index.css"
+                            
+                            ]
+                        }
                     }
-                }
-            };
+                };    
 
-            ac.composite.execute(cfg,function(data, meta){
-                // The 'meta' object containing metadata about the children's binders,
-                // assets, configuration, and HTTP header info is passed to the callback.
-                // This 'meta' object is required for binders to execute and attach content
-                // to the DOM.
-                ac.done(data, meta);
-            });
-        }
+                ac.composite.execute(cfg,function(data, meta){
+                    // The 'meta' object containing metadata about the children's binders,
+                    // assets, configuration, and HTTP header info is passed to the callback.
+                    // This 'meta' object is required for binders to execute and attach content
+                    // to the DOM.
+                    ac.done(data, meta);
+                });
+            }
 
     };
 

@@ -1,1 +1,6 @@
-.textCon{width:430px}
+.textCon{width:430px;margin:43px;padding:43px}
+.generic{background-color:#fff}
+.generic .textHeader{line-height:.05em;margin-bottom:1em}
+.generic .textHeader h2{color:#5a5a65;font-size:2em}
+.generic .textHeader h4{color:#ccc}
+.generic .textContent p{color:#ccc;font-size:.8em}
