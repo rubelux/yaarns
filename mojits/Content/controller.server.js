@@ -29,8 +29,13 @@ YUI.add('Content', function(Y, NAME) {
                         ContentText: {
                             type: "ContentText",
                             config: {
-                                "caller": "Content"
-                           }
+                                "caller": "Content",
+                                "tdata" : {
+                                    content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
+                                    title   : "1st Part",
+                                    date    : "22/12/13"
+                                }
+                            }
                         }
                         
                     },
@@ -42,7 +47,9 @@ YUI.add('Content', function(Y, NAME) {
                             ]
                         }
                     }
-                };    
+                };   
+
+               
 
                 ac.composite.execute(cfg,function(data, meta){
                     // The 'meta' object containing metadata about the children's binders,
