@@ -10,6 +10,11 @@
     	"path":"/content",
     	"call": "content.index"
     },
+    "contentAddSubject":{
+        "verbs":["get"],
+        "path":"/contentAddSubject",
+        "call": "contentAddSubject.index"
+    },
 	"appArea":{
     	"verbs":["get"],
     	"path":"/appArea",

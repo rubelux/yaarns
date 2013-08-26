@@ -20,7 +20,8 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
          * have been constructed.
          */
         init: function(mojitProxy) {
-            this.mojitProxy = mojitProxy;
+            var root = this;
+            root.mojitProxy = mojitProxy;
         },
 
         /**
@@ -30,8 +31,22 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
          * @param node {Node} The DOM node to which this mojit is attached.
          */
         bind: function(node) {
-            var me = this;
-            this.node = node;
+            var root = this;
+            root.node = node;
+
+            var posFuntion = function(){
+                Y.log('post function is called')
+            }
+
+            root.node.one(".addSubject").on('tap', function(e){
+
+                Y.log('me clica');
+
+                root.mojitProxy.broadcast('openAddSubject', {url: 'text'});  
+
+
+
+            })
             /**
              * Example code for the bind method:
              *
@@ -51,4 +66,4 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client']});
+}, '0.0.1', {requires: ['event-tap', 'event-mouseenter', 'mojito-client']});

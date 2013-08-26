@@ -24,10 +24,13 @@
                                     "type": "UserArea"
                                 },
                                 "storyArea":{
-                                    "type" :"StoryArea"
+                                    "type" : "StoryArea"
                                 },
                                 "content":{
                                     "type": "Content"
+                                },
+                                "contentAddSubject":{
+                                    "type": "ContentAddSubject"
                                 }
 
 

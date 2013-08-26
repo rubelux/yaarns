@@ -22,11 +22,24 @@ YUI.add('Content', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
-      
-            var cfg = {
+            var ac = ac;
+            var _this = this;
+
+             var model = ac.models.get('ContentModelStory');
+
+         
+          
+            model.search(function(data){
+                 Y.log("from controler")
+                 Y.log(data);
+                 Y.log("--------from controler-----------------")
+               
+            });
+
+            _this.cfg = {
                     view: "index",
                     children: {
-                        ContentText: {
+                        contentText : {
                             type: "ContentText",
                             config: {
                                 "caller": "Content",
@@ -36,9 +49,31 @@ YUI.add('Content', function(Y, NAME) {
                                     date    : "22/12/13"
                                 }
                             }
+                        },
+                        contentText2 : {
+                            type: "ContentText",
+                            config: {
+                                "caller": "Content",
+                                "tdata" : {
+                                    content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
+                                    title   : "2st Part",
+                                    date    : "22/12/13"
+                                }
+                            }
+                        },
+                        contentText3 : {
+                            type: "ContentText",
+                            config: {
+                                "caller": "Content",
+                                "tdata" : {
+                                    content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
+                                    title   : "3st Part",
+                                    date    : "22/12/13"
+                                }
+                            }
                         }
-                        
                     },
+
                     assets: {
                         top: {
                             css: [
@@ -49,17 +84,42 @@ YUI.add('Content', function(Y, NAME) {
                     }
                 };   
 
-               
+                     
 
-                ac.composite.execute(cfg,function(data, meta){
+                ac.composite.execute(_this.cfg,function(data, meta){
                     // The 'meta' object containing metadata about the children's binders,
                     // assets, configuration, and HTTP header info is passed to the callback.
                     // This 'meta' object is required for binders to execute and attach content
                     // to the DOM.
-                    ac.done(data, meta);
+
+                    Y.log(_this.cfg)
+                    Y.log("--------");
+                    var dataF = {
+                        childrens: [
+
+                        ]
+                    };
+                    dataF.childrens.push(data);
+
+                    Y.log(data)
+                    Y.log("--------");
+                    ac.done({object: data}, meta);
                 });
+            },
+
+
+            addSubject : function(ac){
+                Y.log('yess from controler');
+                clearTimeout(ac._timer);
             }
+
+
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-composite-addon']});
+}, '0.0.1', {requires: ['mojito', 'mojito-composite-addon', 'mojito-params-addon', 'mojito-models-addon', 'ContentModelStory']});
+
+
+
+
+
