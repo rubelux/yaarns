@@ -31,9 +31,9 @@ YUI.add('ContentModelStory', function(Y, NAME) {
             callback(null, { some: 'data' });
         },
 
-        search: function (callback) {
+        getStories: function (type, callback) {
           
-
+        var type = type || {}
          /*   var server = new mongodb.Server("127.0.0.1", 27017, {});
             var dbTest = new mongodb.Db('unTestDB', server, {});
 
@@ -89,29 +89,7 @@ YUI.add('ContentModelStory', function(Y, NAME) {
                         if (err) throw err;
                         
                             
-                          /* col.insert(
-                            {    
-                            namw:"cabron2",    
-                            contentText : {
-                                type: "ContentText",
-                                config: {
-                                    caller: "Content",
-                                    tdata : {
-                                        content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
-                                        title   : "3st Part",
-                                        date    : "22/12/13"
-                                        }
-                                    }
-                                }    
-
-                            }, function(err, records){
-                                
-                                    callback ({some:records[0]});
-                                    db.close();
-                                 
-                                }); */
-
-                                   var resultp = col.find({'gender':'f'}).toArray(function(error, records){
+                                   var resultp = col.find(type).toArray(function(error, records){
                                     if (err) throw err;
                                     
                                      callback({some:records});
@@ -130,7 +108,40 @@ YUI.add('ContentModelStory', function(Y, NAME) {
 
            callback({some:'nothing'});
 
-        }//search  
+        }, 
+
+        saveSubject: function(data, callback){
+            Y.log('from saveSubject.......');
+            Y.log(data);
+
+            var server = new mongodb.Server('ds029798.mongolab.com', 29798, {auto_reconnect : true})
+             ,  db     = new mongodb.Db('habbendb', server, {safe:false})
+             ,  data   = data;
+
+                         
+
+            db.open(function(err, client) {
+                
+                if (err) throw err;
+
+                client.authenticate('habben_user', 'habbenps', function(err, success) {
+                    
+                    if (err) throw err;
+                   
+                    client.createCollection('stories', function(err, col){
+                        if (err) throw err;
+                        
+                            
+                        col.insert( data,  function(err, records){
+                                
+                                    callback ({some:records[0]});
+                                    db.close();
+                                 
+                        });
+                    })
+                });
+            });
+        }  
 
     };
 

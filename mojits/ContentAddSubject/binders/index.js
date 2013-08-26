@@ -34,35 +34,50 @@ YUI.add('ContentAddSubjectBinderIndex', function(Y, NAME) {
          * @param node {Node} The DOM node to which this mojit is attached.
          */
         bind: function(node) {
-            var root = this
-             ,  form = node.one('#addSubjectForm');
+            var root       = this
+             ,  form       = node.one('#addSubjectForm')
+             ,  addSubject = node.one('.addSubject');
 
             root.node = node;
-            root.mojitProxy = this.mojitProxy
+            root.mojitProxy = this.mojitProxy;
 
             function startForm(){
-                root.node.one('.addSubject').setStyle('display','block');
+                addSubject.setStyle('display','block');
             };
 
             function updateDOM(err, markup){
-                
+
                 Y.log('info back ' +markup);
             }
 
             form.on('submit', function(e){
                 e.preventDefault();
-                var title = form.one('#title').get('value')
-                 ,  body  = form.one('#body').get('value');
+              
+                //the inner object must be called body.
+                var params = {
+                    body  : {
+                        title : form.one('#title').get('value'),  
+                        body  : form.one('#body').get('value') 
+                    }    
+                } 
 
-                root.mojitProxy.invoke('saveSubject', { params: {title: title, body: body} }, updateDOM);
+                //send subject data to content, so its bilding can invoke its control and then pass to model into database
+                root.mojitProxy.broadcast('saveSubject', {params: params}, function(){Y.log('tryyyyyyyy ..........')});  
 
             });    
 
 
-             root.mojitProxy.listen('openAddSubject', function(data){
+            root.mojitProxy.listen('openAddSubject', function(data){
                 Y.log('listen')
                 startForm();
             });
+
+            root.mojitProxy.listen('closeAddSubject', function(data){
+                Y.log('closing')
+                addSubject.setStyle('display','none');
+            });
+
+
 
             
 

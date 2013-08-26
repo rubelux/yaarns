@@ -11,7 +11,7 @@
     	"call": "content.index"
     },
     "contentAddSubject":{
-        "verbs":["get"],
+        "verbs":["get", "post"],
         "path":"/contentAddSubject",
         "call": "contentAddSubject.index"
     },

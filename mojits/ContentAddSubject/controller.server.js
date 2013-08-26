@@ -36,13 +36,16 @@ YUI.add('ContentAddSubject', function(Y, NAME) {
         },
 
         saveSubject: function(ac){
+            ac.done();
             Y.log('invoked............');
             Y.log(ac.params);
 
+            Y.log(ac.params.getFromMerged('title'));
+
             Y.log('invoked............');
-            ac.done();
+            
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'ContentAddSubjectModel']});
+}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-params-addon', 'mojito-models-addon', 'ContentAddSubjectModel']});

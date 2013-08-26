@@ -25,7 +25,7 @@ YUI.add('Content', function(Y, NAME) {
             var ac = ac;
             var _this = this;
 
-             var model = ac.models.get('ContentModelStory');
+             /*var model = ac.models.get('ContentModelStory');
 
          
           
@@ -34,7 +34,7 @@ YUI.add('Content', function(Y, NAME) {
                  Y.log(data);
                  Y.log("--------from controler-----------------")
                
-            });
+            }); */
 
             _this.cfg = {
                     view: "index",
@@ -105,12 +105,48 @@ YUI.add('Content', function(Y, NAME) {
                     Y.log("--------");
                     ac.done({object: data}, meta);
                 });
+
+                //this.getSubjects();
+            },
+
+            //get all subjects from model 
+            getSubjects : function(ac){
+                var model = ac.models.get('ContentModelStory');
+
+                //first attr is empty cos its no creatareia for the mongo find so it returns everything
+                model.saveSubject({}, function(data){
+                    Y.log("from getStories in controler content")
+                    Y.log(data);
+                    Y.log("--------from controler-----------------")
+                });
+
+                ac.done();
             },
 
 
-            addSubject : function(ac){
-                Y.log('yess from controler');
-                clearTimeout(ac._timer);
+            saveSubject : function(ac){
+                Y.log('yess from controler of content');
+
+                var model = ac.models.get('ContentModelStory')
+
+                 , rawSubject = {
+                    creationTime : new Date(),
+                    title        : ac.params.getFromMerged('title'),
+                    content      : ac.params.getFromMerged('body'),
+                    type         : "ContentText"
+                }
+
+                model.saveSubject(rawSubject , function(data){
+                     Y.log("from controler")
+                     Y.log(data);
+                     Y.log("--------from controler-----------------")
+                   
+                });
+               
+                Y.log(ac.params.getFromMerged('title'));
+                 Y.log('---content');
+                 ac.done();
+               // clearTimeout(ac._timer);
             }
 
 

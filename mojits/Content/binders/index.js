@@ -22,6 +22,8 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
         init: function(mojitProxy) {
             var root = this;
             root.mojitProxy = mojitProxy;
+
+            
         },
 
         /**
@@ -46,7 +48,18 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
 
 
 
-            })
+            });
+
+            root.mojitProxy.listen('saveSubject', function(data){
+                
+                var params = data.data.params;
+              
+                root.mojitProxy.invoke('saveSubject', { params: params  }, function(err, markup){
+                    if (err) throw err;
+
+                    root.mojitProxy.broadcast('closeAddSubject', {state: 'all good'});  
+                });
+            });
             /**
              * Example code for the bind method:
              *
