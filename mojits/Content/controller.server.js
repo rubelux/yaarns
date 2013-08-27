@@ -101,12 +101,11 @@ YUI.add('Content', function(Y, NAME) {
                     };
                     dataF.childrens.push(data);
 
-                    Y.log(data)
-                    Y.log("--------");
+                   
                     ac.done({object: data}, meta);
                 });
 
-                //this.getSubjects();
+                this.getSubjects(ac);
             },
 
             //get all subjects from model 
@@ -114,13 +113,13 @@ YUI.add('Content', function(Y, NAME) {
                 var model = ac.models.get('ContentModelStory');
 
                 //first attr is empty cos its no creatareia for the mongo find so it returns everything
-                model.saveSubject({}, function(data){
+                model.getStories({}, function(data){
                     Y.log("from getStories in controler content")
                     Y.log(data);
                     Y.log("--------from controler-----------------")
                 });
 
-                ac.done();
+               // ac.done();
             },
 
 

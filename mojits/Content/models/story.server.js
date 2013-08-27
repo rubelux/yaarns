@@ -91,7 +91,9 @@ YUI.add('ContentModelStory', function(Y, NAME) {
                             
                                    var resultp = col.find(type).toArray(function(error, records){
                                     if (err) throw err;
-                                    
+                                     Y.log('from model-------------------------------------')
+                                     Y.log(records)
+                                     Y.log('----------')   
                                      callback({some:records});
                                     db.close();
                                   }); 
