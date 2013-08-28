@@ -31,9 +31,9 @@ YUI.add('ContentModelStory', function(Y, NAME) {
             callback(null, { some: 'data' });
         },
 
-        getStories: function (type, callback) {
+        getStories: function (type, ac, callback) {
           
-        var type = type || {}
+        var type = type || {};
          /*   var server = new mongodb.Server("127.0.0.1", 27017, {});
             var dbTest = new mongodb.Db('unTestDB', server, {});
 
@@ -91,10 +91,10 @@ YUI.add('ContentModelStory', function(Y, NAME) {
                             
                                    var resultp = col.find(type).toArray(function(error, records){
                                     if (err) throw err;
-                                     Y.log('from model-------------------------------------')
-                                     Y.log(records)
-                                     Y.log('----------')   
-                                     callback({some:records});
+                                    // Y.log('from model-------------------------------------')
+                                     //Y.log(records)
+                                     //Y.log('----------')   
+                                     callback(ac, {some:records});
                                     db.close();
                                   }); 
 
