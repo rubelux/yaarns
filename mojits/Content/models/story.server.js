@@ -31,8 +31,9 @@ YUI.add('ContentModelStory', function(Y, NAME) {
             callback(null, { some: 'data' });
         },
 
-        getStories: function (type, ac, callback) {
-          
+        getStories: function (type, callback) {
+            Y.log('callback............')
+          //Y.log(callback)
         var type = type || {};
          /*   var server = new mongodb.Server("127.0.0.1", 27017, {});
             var dbTest = new mongodb.Db('unTestDB', server, {});
@@ -75,7 +76,7 @@ YUI.add('ContentModelStory', function(Y, NAME) {
             var server = new mongodb.Server('ds029798.mongolab.com', 29798, {auto_reconnect : true});
             var db     = new mongodb.Db('habbendb', server, {});
 
-            console.log(db)              
+                     
 
             db.open(function(err, client) {
                 
@@ -88,13 +89,13 @@ YUI.add('ContentModelStory', function(Y, NAME) {
                     client.createCollection('stories', function(err, col){
                         if (err) throw err;
                         
-                            
+                                    
                                    var resultp = col.find(type).toArray(function(error, records){
                                     if (err) throw err;
-                                    // Y.log('from model-------------------------------------')
+                                     Y.log('from model-------------------------------------------------------------------------------------------------')
                                      //Y.log(records)
                                      //Y.log('----------')   
-                                     callback(ac, {some:records});
+                                     callback( {some:records});
                                     db.close();
                                   }); 
 
@@ -108,7 +109,7 @@ YUI.add('ContentModelStory', function(Y, NAME) {
                     });
             });
 
-           callback({some:'nothing'});
+          // callback({some:'nothing'});
 
         }, 
 
