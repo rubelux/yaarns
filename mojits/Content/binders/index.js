@@ -36,7 +36,17 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
             var root = this;
             root.node = node;
 
-            var posFuntion = function(){
+            var container = document.querySelector('#container');
+
+            /*var pckry = new Packery( container, {
+              // options
+              itemSelector: '.item',
+              columnWidth: 50
+
+            });*/
+
+
+            /*var posFuntion = function(){
                 Y.log('post function is called')
             }
 
@@ -48,7 +58,33 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
 
 
 
+            });*/
+
+            var container  = root.node.one('#container')
+             ,  items      = container.all('.item')
+             ,  totalWidth = 0;
+
+             Y.log(container);
+
+            Y.each(items, function(item){
+                
+                item.setStyles({
+                    position: 'absolute',
+                    left: totalWidth + 'px',
+                    top: '0px'
+                }); 
+
+                totalWidth += item.get('offsetWidth');
+
             });
+
+            container.setStyles({
+                position : 'relative',
+                width    : totalWidth + 'px',
+                height   : container.get('winHeight')
+             });
+
+
 
             root.mojitProxy.listen('saveSubject', function(data){
                 

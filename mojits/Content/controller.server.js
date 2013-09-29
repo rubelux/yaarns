@@ -38,7 +38,7 @@ YUI.add('Content', function(Y, NAME) {
 
 
 
-           _this.cfg = {
+         /*  _this.cfg = {
                     
                     children: {
                         contentText : {
@@ -62,17 +62,6 @@ YUI.add('Content', function(Y, NAME) {
                                     date    : "22/12/13"
                                 }
                             }
-                        },
-                        contentText3 : {
-                            type: "ContentText",
-                            config: {
-                                "caller": "Content",
-                                "tdata" : {
-                                    content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
-                                    title   : "3st Part",
-                                    date    : "22/12/13"
-                                }
-                            }
                         }
                     },
 
@@ -86,7 +75,7 @@ YUI.add('Content', function(Y, NAME) {
                             ]
                         }
                     }
-                };   
+                };    */
 
                 
 
@@ -100,7 +89,10 @@ YUI.add('Content', function(Y, NAME) {
                     var obChildrenFor  = _this.makeObject(data.some);
 
                     ac.composite.execute( obChildrenFor,  function(data, meta){
-                            Y.log('execute.....')
+                            
+                             Y.log(".......................meta.............");
+                            Y.log(meta);
+                             Y.log(".......................data.............");
                         
                             ac.done(data , meta);
 

@@ -10,6 +10,7 @@
 .storyMenu .text2lines{line-height:.7em}
 .storyMenu .text2lines span{font-size:75%;font-weight:normal;margin-left:.75em}
 .storyMenu{background-color:#9ea1b0 !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:auto;overflow-y:hidden}
+.storyMenu:after{content:' ' !important;display:block !important;clear:both !important}
 .storyMenu .pure-menu{background:transparent;border:0}
 .storyMenu .pure-menu .pure-menu-open{background:#9ea1b0 !important}
 .storyMenu .pure-menu .pure-menu-heading{margin:0 !important;background-color:#9ea1b0 !important}

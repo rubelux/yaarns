@@ -4,6 +4,20 @@
 
 //Make content float
 .content{
+	
+  	overflow: hidden;
+
+}
+
+.content:after{
+	
+	content: ' ';
+  	display: block;
+  	clear: both;
+}
+
+
+.item{
 	float: left;
 }
 
@@ -18,6 +32,7 @@
 	height: @unitSize * 1;
 	background-color: @colorButtonsTheme;
 	cursor:pointer;
+	z-index: 10000;
 }
 
 .addSubject span {

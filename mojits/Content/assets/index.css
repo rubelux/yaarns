@@ -1,3 +1,5 @@
-.content{float:left}
-.addSubject{position:absolute;top:0;right:0;text-align:center;width:86px;height:86px;background-color:#43eebf;cursor:pointer}
+.content{overflow:hidden}
+.content:after{content:' ';display:block;clear:both}
+.item{float:left}
+.addSubject{position:absolute;top:0;right:0;text-align:center;width:86px;height:86px;background-color:#43eebf;cursor:pointer;z-index:10000}
 .addSubject span{display:block;margin-top:25%}
