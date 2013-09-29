@@ -90,15 +90,13 @@ YUI.add('Content', function(Y, NAME) {
 
                     ac.composite.execute( obChildrenFor,  function(data, meta){
                             
-                             Y.log(".......................meta.............");
-                            Y.log(meta);
-                             Y.log(".......................data.............");
+                         
                         
-                            ac.done(data , meta);
+                        ac.done(data , meta);
 
                           
-                        });    
-                  //  ac.done();
+                    });    
+                
                        
                 });
 
@@ -135,7 +133,8 @@ YUI.add('Content', function(Y, NAME) {
                     
                     //if( index === undefined ) return;
                     //var rawData = JSON.parse(rawData[counter]);
-                    var content = String(rawData[counter].content)
+                   var content = String(rawData[counter].content)
+                     ,  date    = rawData[counter].creationTime;
                      //formating object
                     _obForDynamicMojits['contentText'+counter]                 = {};
                     _obForDynamicMojits['contentText'+counter].type            = "ContentText";
@@ -143,8 +142,7 @@ YUI.add('Content', function(Y, NAME) {
                     _obForDynamicMojits['contentText'+counter].config.caller   = "Content";
                     _obForDynamicMojits['contentText'+counter].config.content  = rawData[counter].content;
                     _obForDynamicMojits['contentText'+counter].config.title    = rawData[counter].title;
-                    _obForDynamicMojits['contentText'+counter].config.date     = rawData[counter].creationTime;
-
+                    _obForDynamicMojits['contentText'+counter].config.date     = date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
                 
                      counter++
                  

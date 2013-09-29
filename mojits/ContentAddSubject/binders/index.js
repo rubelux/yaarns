@@ -61,9 +61,10 @@ YUI.add('ContentAddSubjectBinderIndex', function(Y, NAME) {
                     }    
                 } 
 
-                //send subject data to content, so its bilding can invoke its control and then pass to model into database
+                //send subject data to content bind.js, so its bilding can invoke its control and then pass to model into database
                 root.mojitProxy.broadcast('saveSubject', {params: params}, function(){Y.log('tryyyyyyyy ..........')});  
 
+                root.mojitProxy.refreshView();
             });    
 
 

@@ -36,19 +36,10 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
             var root = this;
             root.node = node;
 
-            var container = document.querySelector('#container');
-
-            /*var pckry = new Packery( container, {
-              // options
-              itemSelector: '.item',
-              columnWidth: 50
-
-            });*/
-
-
+          
             /*var posFuntion = function(){
                 Y.log('post function is called')
-            }
+            }*/
 
             root.node.one(".addSubject").on('tap', function(e){
 
@@ -58,7 +49,7 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
 
 
 
-            });*/
+            });
 
             var container  = root.node.one('#container')
              ,  items      = container.all('.item')
