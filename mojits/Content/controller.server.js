@@ -169,9 +169,7 @@ YUI.add('Content', function(Y, NAME) {
                     cfg.assets.top = {};
                     cfg.assets.top.css = ["/static/ContentText/assets/index.css"];
 
-                console.log('----------------------------------------------------------------');
-                console.log(cfg);
-                  console.log('----------------------------------------------------------------');        
+                
 
                 return cfg;
 
