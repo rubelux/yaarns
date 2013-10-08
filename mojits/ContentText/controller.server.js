@@ -1,4 +1,4 @@
-/*jslint anon:true, sloppy:true, nomen:true*/
+
 YUI.add('ContentText', function(Y, NAME) {
 
 /**
@@ -15,14 +15,9 @@ YUI.add('ContentText', function(Y, NAME) {
      */
     Y.namespace('mojito.controllers')[NAME] = {
 
-        /**
-         * Method corresponding to the 'index' action.
-         *
-         * @param ac {Object} The ActionContext that provides access
-         *        to the Mojito API.
-         */
+       
         index: function(ac) {
-            Y.log('ssooooooo');
+       
             var caller = ac.config.get("caller");
 
 
@@ -47,7 +42,7 @@ YUI.add('ContentText', function(Y, NAME) {
                  */
                  
             
-                
+              
                 ac.done({
                     "title"  : ac.config.get("title"),
                     "date"   : ac.config.get("date").toString(),

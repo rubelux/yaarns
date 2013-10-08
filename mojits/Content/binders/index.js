@@ -33,13 +33,11 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
          * @param node {Node} The DOM node to which this mojit is attached.
          */
         bind: function(node) {
-            var root = this;
-            root.node = node;
+            var root = this
+             ,  urlParams = Y.mojito.util.copy(this.mojitProxy.context)
+             ,  addSubjectBt = node.one(".addSubject");
 
-          
-            /*var posFuntion = function(){
-                Y.log('post function is called')
-            }*/
+            root.node = node;
 
             root.node.one(".addSubject").on('tap', function(e){
 
@@ -84,7 +82,14 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
                 root.mojitProxy.invoke('saveSubject', { params: params  }, function(err, markup){
                     if (err) throw err;
 
-                    root.mojitProxy.broadcast('closeAddSubject', {state: 'all good'});  
+                    root.mojitProxy.broadcast('closeAddSubject', {state: 'all good'});
+
+                    /*root.mojitProxy.refreshView({
+                        params: {
+                            ur: urlParams
+                        }
+                    }); */
+
                 });
             });
             /**

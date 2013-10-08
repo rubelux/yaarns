@@ -32,8 +32,7 @@ YUI.add('ContentModelStory', function(Y, NAME) {
         },
 
         getStories: function (type, callback) {
-            Y.log('callback............')
-          //Y.log(callback)
+        
         var type = type || {};
          /*   var server = new mongodb.Server("127.0.0.1", 27017, {});
             var dbTest = new mongodb.Db('unTestDB', server, {});
@@ -74,7 +73,7 @@ YUI.add('ContentModelStory', function(Y, NAME) {
                         
 
             var server = new mongodb.Server('ds029798.mongolab.com', 29798, {auto_reconnect : true});
-            var db     = new mongodb.Db('habbendb', server, {});
+            var db     = new mongodb.Db('habbendb', server, {safe : false});
 
                      
 
@@ -87,26 +86,22 @@ YUI.add('ContentModelStory', function(Y, NAME) {
                     if (err) throw err;
                    
                     client.createCollection('stories', function(err, col){
+                        
                         if (err) throw err;
                         
-                                    
-                                   var resultp = col.find(type).toArray(function(error, records){
-                                    if (err) throw err;
-                                     Y.log('from model-------------------------------------------------------------------------------------------------')
-                                     //Y.log(records)
-                                     //Y.log('----------')   
-                                     callback( {some:records});
-                                    db.close();
-                                  }); 
-
+                        var resultp = col.find(type).toArray(function(error, records){
                             
+                            if (err) throw err;
 
-                            })
-
-
-                        
+                            callback({some:records});
+                            
+                            db.close();
                           
-                    });
+                        }); 
+
+                    })
+
+                });
             });
 
           // callback({some:'nothing'});

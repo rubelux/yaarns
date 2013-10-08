@@ -52,7 +52,7 @@
         },
         "yui":{
             "config":{
-                "combine": false
+                "combine": true
             }
         }
     }

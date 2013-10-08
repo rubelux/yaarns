@@ -37,8 +37,8 @@ YUI.add('Content', function(Y, NAME) {
             }); */
 
 
-
-         /*  _this.cfg = {
+            /*
+           _this.cfg = {
                     
                     children: {
                         contentText : {
@@ -48,7 +48,7 @@ YUI.add('Content', function(Y, NAME) {
                                 "tdata" : {
                                     content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
                                     title   : "1st Part",
-                                    date    : "22/12/13"
+                                    date    : new Date()
                                 }
                             }
                         },
@@ -59,7 +59,7 @@ YUI.add('Content', function(Y, NAME) {
                                 "tdata" : {
                                     content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
                                     title   : "2st Part",
-                                    date    : "22/12/13"
+                                    date    : new Date()
                                 }
                             }
                         }
@@ -75,11 +75,20 @@ YUI.add('Content', function(Y, NAME) {
                             ]
                         }
                     }
-                };    */
+                };    
 
-                
+                ac.composite.execute( _this.cfg,  function(data, meta){
+                         
+                        console.log("--------------------data------------------------");   
+                        console.log(data, meta);
+                        console.log("--------------------data------------------------")   
+                        
+                        ac.done({});
 
-                   
+                          
+                });
+
+                */ 
 
                 var model = ac.models.get('ContentModelStory');
 
@@ -89,13 +98,14 @@ YUI.add('Content', function(Y, NAME) {
                     var obChildrenFor  = _this.makeObject(data.some);
 
                     ac.composite.execute( obChildrenFor,  function(data, meta){
-                            
                          
-                        
-                        ac.done(data , meta);
+                        var template = {};
+                        template.content = data
+
+                        ac.done(template, meta);
 
                           
-                    });    
+                    });   
                 
                        
                 });
@@ -144,7 +154,7 @@ YUI.add('Content', function(Y, NAME) {
                     _obForDynamicMojits['contentText'+counter].config.title    = rawData[counter].title;
                     _obForDynamicMojits['contentText'+counter].config.date     = date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
                 
-                     counter++
+                    counter++
                  
                    
 
@@ -159,6 +169,10 @@ YUI.add('Content', function(Y, NAME) {
                     cfg.assets.top = {};
                     cfg.assets.top.css = ["/static/ContentText/assets/index.css"];
 
+                console.log('----------------------------------------------------------------');
+                console.log(cfg);
+                  console.log('----------------------------------------------------------------');        
+
                 return cfg;
 
             },
@@ -168,6 +182,8 @@ YUI.add('Content', function(Y, NAME) {
                 Y.log('yess from controler of content');
 
                 var model = ac.models.get('ContentModelStory')
+                 ,  root  = this
+                 ,  ac    = ac
 
                  , rawSubject = {
                     creationTime : new Date(),
@@ -177,9 +193,9 @@ YUI.add('Content', function(Y, NAME) {
                 }
 
                 model.saveSubject(rawSubject , function(data){
-                    
-                     Y.log(data);
-                     
+                        Y.log('------------------------new subject save----------------------------')
+                     //root.index(ac);
+                     ac.http.redirect('/');
                    
                 });
                
@@ -193,7 +209,7 @@ YUI.add('Content', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'json-parse', 'mojito-config-addon', 'mojito-composite-addon', 'mojito-params-addon', 'mojito-models-addon', 'ContentModelStory']});
+}, '0.0.1', {requires: ['mojito', 'json-parse', 'mojito-config-addon','mojito-http-addon', 'mojito-composite-addon', 'mojito-params-addon', 'mojito-models-addon', 'ContentModelStory']});
 
 
 
