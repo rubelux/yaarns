@@ -1,14 +1,38 @@
 #appMenuExterCont{overflow:hidden;height:100%}
-#appMenuInnerCont{width:258px;height:100%;margin-left:-172px;-webkit-transition:margin-left .5s ease;-moz-transition:margin-left .5s ease;-o-transition:margin-left .5s ease;-ms-transition:margin-left .5s ease;transition:margin-left .5s ease}
+#appMenuInnerCont{height:100%;margin-left:-172px;-webkit-transition:margin-left .5s ease;-moz-transition:margin-left .5s ease;-o-transition:margin-left .5s ease;-ms-transition:margin-left .5s ease;transition:margin-left .5s ease}
+.opened{margin-left:0 !important;width:86px !important;float:left;overflow:hidden;position:relative !important}
+.opened .cutlayer{position:absolute;right:172px}
+.opened .cutlayer>ul{position:absolute !important}
 #appMenuInnerCont:hover{margin-left:0}
+#appMenuInnerForm{width:430px;margin:0 -550px 0 86px;-webkit-transition:margin-right .5s ease;-moz-transition:margin-right .5s ease;-o-transition:margin-right .5s ease;-ms-transition:margin-right .5s ease;transition:margin-right .5s ease}
+.openedf{margin-right:86px !important}
+.titleWhite{color:#fff;font-size:2.2em;letter-spacing:.1em !important;line-height:160px;margin:0;padding-left:15px}
+.formBig{font-size:130%}
+.formBig input[type="text"]{width:100%;border-top:0 solid #fff;border-right:0 solid #fff;border-bottom:1px solid #fff;border-left:0 solid #fff;background-color:transparent}
+.formBig input{color:#6f6f78}
+.formBig input::-webkit-input-placeholder{color:#6f6f78}
+.formBig input::-moz-placeholder{color:#6f6f78}
+.formBig input:-ms-input-placeholder{color:#6f6f78}
+.formBig input:-moz-placeholder{color:#6f6f78}
+.formBig select{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:100%;border:0;background-color:#3c3c48;color:#6f6f78;padding:5px}
+.formBig label{letter-spacing:0 !important;color:#6f6f78}
+.formBig .litteText{margin:0;color:#6f6f78;font-size:60% !important}
+input:focus,textarea:focus,select:focus{outline:none;border:none;color:#b0b0b6}
+.formBig select option:hover{background-color:#5a5a66}
+::selection{background:#5a5a66;}
+::-moz-selection{background:#5a5a66;}
+.formBig button{color:#fff;font-size:125%;height:86px;font-weight:bold}
+.pure-button-cancel{background-color:#5a5a65 !important}
+.pure-button-cancel:hover{background-color:#4b4b56 !important}
+.pure-button-cancel:hover{background-color:#4b4b54}
 .appMenu{background-color:#31313e !important;position:relative;z-index:1000;float:left;height:100%;overflow-x:auto;overflow-y:hidden}
-.appMenu li{height:86px}
 .appMenu .pure-menu{background:transparent;border:0}
 .appMenu .pure-menu .pure-menu-open{background:#31313e !important}
 .appMenu .pure-menu .pure-menu-heading{margin:0 !important;background-color:#31313e !important}
 .appMenu .pure-menu li a{color:#fff}
 #search-theme{background-color:#5a5a66 !important}
 #search-theme:hover,#search-theme:focus{background-color:#505070 !important}
-#green-theme{background-color:#43eebf !important}
+#green-theme{background-color:#43eebf !important;width:258px}
 #green-theme:hover,#green-theme:focus{background-color:#00d3b2 !important}
+#green-theme .opened{content:'X'}
 .searchIcon{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/AppArea/assets/imgs/icons/search-icon.svg") no-repeat scroll center center / 60px 60px transparent;}

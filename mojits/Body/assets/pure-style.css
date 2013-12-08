@@ -87,7 +87,7 @@ img{border:0;-ms-interpolation-mode:bicubic;}
 svg:not(:root){overflow:hidden}
 figure{margin:0}
 form{margin:0}
-fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+fieldset{border:0 solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
 legend{border:0;padding:0;white-space:normal;*margin-left:-7px;}
 button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle;}
 button,input{line-height:normal}
@@ -259,7 +259,7 @@ table{border-collapse:collapse;border-spacing:0}
 .pure-test{color:#f0f0f0;background:#f5f5f5;background:-webkit-gradient(linear, left bottom, left top, color-stop(0, #eee), color-stop(1, #000));background:-ms-linear-gradient(bottom, #eee, #000);background:-moz-linear-gradient(center bottom, #eee 0, #000 100%);background:-o-linear-gradient(#000, #eee);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#eeeeee', GradientType=0)}
 .pure-button-hover,.pure-button:hover,.pure-button:focus{background-color:#00d3b2}
 .pure-button[disabled],.pure-button-disabled,.pure-button-disabled:hover,.pure-button-disabled:focus,.pure-button-disabled:active{background-color:#00d3b2}
-.pure-button{width:100%;color:#444;color:rgba(0,0,0,0.8);*color:#444;border:1px solid #999;border:none rgba(0,0,0,0);background-color:#43eebf}
+.pure-button{width:100%;border:1px solid #999;border:none rgba(0,0,0,0);background-color:#43eebf}
 .float-left{float:left}
 .float-right{float:right}
 .clear-fix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}
@@ -272,3 +272,6 @@ table{border-collapse:collapse;border-spacing:0}
 .hoCenterText{text-align:center}
 .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:#000;z-index:1001;background-color:rgba(0,0,0,0.6);filter:alpha(opacity=75)}
 .modal{position:absolute;top:25%;left:25%;width:50%;height:50%;padding:16px;background:#fff;color:#333;z-index:1002;overflow:auto}
+.boxHeight-1{height:86px}
+.boxHeight-1-2{height:43px}
+.boxHeight-2{height:172px}

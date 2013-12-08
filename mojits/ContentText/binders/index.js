@@ -32,6 +32,13 @@ YUI.add('ContentTextBinderIndex', function(Y, NAME) {
         bind: function(node) {
             var me = this;
             this.node = node;
+
+
+            node.one('.closeB').on("click", function(e){
+
+                Y.log('Im closed')
+
+            });
             /**
              * Example code for the bind method:
              *

@@ -22,7 +22,7 @@ YUI.add('Body', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
-            Y.log('its here')
+           
            ac.composite.done({});
 
         }

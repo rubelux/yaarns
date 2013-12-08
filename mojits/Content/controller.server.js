@@ -143,7 +143,7 @@ YUI.add('Content', function(Y, NAME) {
                     
                     //if( index === undefined ) return;
                     //var rawData = JSON.parse(rawData[counter]);
-                   var content = String(rawData[counter].content)
+                    var content = String(rawData[counter].content)
                      ,  date    = rawData[counter].creationTime;
                      //formating object
                     _obForDynamicMojits['contentText'+counter]                 = {};
@@ -152,7 +152,7 @@ YUI.add('Content', function(Y, NAME) {
                     _obForDynamicMojits['contentText'+counter].config.caller   = "Content";
                     _obForDynamicMojits['contentText'+counter].config.content  = rawData[counter].content;
                     _obForDynamicMojits['contentText'+counter].config.title    = rawData[counter].title;
-                    _obForDynamicMojits['contentText'+counter].config.date     = date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear();
+                    _obForDynamicMojits['contentText'+counter].config.date     = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
                 
                     counter++
                  
@@ -193,13 +193,13 @@ YUI.add('Content', function(Y, NAME) {
                 model.saveSubject(rawSubject , function(data){
                         Y.log('------------------------new subject save----------------------------')
                      //root.index(ac);
-                     ac.http.redirect('/');
-                   
+                     //ac.http.redirect('/');
+                    ac.done();
                 });
                
-                Y.log(ac.params.getFromMerged('title'));
+                //Y.log(ac.params.getFromMerged('title'));
                  Y.log('---content');
-                 //ac.done();
+                 //
                // clearTimeout(ac._timer);
             }
 

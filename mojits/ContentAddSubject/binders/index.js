@@ -36,21 +36,15 @@ YUI.add('ContentAddSubjectBinderIndex', function(Y, NAME) {
         bind: function(node) {
             var root       = this
              ,  form       = node.one('#addSubjectForm')
-             ,  addSubject = node.one('.addSubject');
+             ,  addSubject = node.one('.addSubject')
+             ,  modal      = node.one('.overlayC')
+             ,  blackOver  = node.one('.overlay')
+             ,  urlParams  = Y.mojito.util.copy(this.mojitProxy.context); 
 
             root.node = node;
             root.mojitProxy = this.mojitProxy;
 
-            function startForm(){
-                addSubject.setStyle('display','block');
-            };
-
-            function updateDOM(err, markup){
-
-                Y.log('info back ' +markup);
-            }
-
-            form.on('submit', function(e){
+            this.form = form.on('submit', function(e){
                 e.preventDefault();
               
                 //the inner object must be called body.
@@ -61,27 +55,45 @@ YUI.add('ContentAddSubjectBinderIndex', function(Y, NAME) {
                     }    
                 } 
 
-                //send subject data to content bind.js, so its bilding can invoke its control and then pass to model into database
+                Y.log('----------------------------------------------------Im saveSubject--------------------')
+                //send subject data to content bind.js, so its binding can invoke its control and then pass to model into database
                 root.mojitProxy.broadcast('saveSubject', {params: params}, function(){Y.log('tryyyyyyyy ..........')});  
 
-                root.mojitProxy.refreshView();
-            });    
+               /* root.mojitProxy.refreshView({
+                    params: {
+                        ur: urlParams
+                    }
+                }); */ 
+            });
+
+            this.blackOver = blackOver.on('click', function(e){
+
+                modal.setStyle('display','none');
+
+            });  
 
 
             root.mojitProxy.listen('openAddSubject', function(data){
-                Y.log('listen')
-                startForm();
+                Y.log('Im openeend')
+                modal.setStyle('display','block');
             });
 
             root.mojitProxy.listen('closeAddSubject', function(data){
                 Y.log('closing')
-                addSubject.setStyle('display','none');
+                modal.setStyle('display','none');
             });
 
 
 
             
 
+        },
+        onRefreshView : function(){
+            Y.log('---------------------------------------refreshed form------------------------------------------------------------');
+
+            this.blackOver.detach(true);
+            this.form.detach(true);
+            this.bind.apply(this, arguments);
         }
 
     };

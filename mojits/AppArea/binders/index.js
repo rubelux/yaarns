@@ -33,106 +33,83 @@ YUI.add('AppAreaBinderIndex', function(Y, NAME) {
 
             this.node = node;
             
+            var me                  = this.node
+             ,  root                = this
+             ,  clickOverBase       = this.node.one('#clickOverBase')
+             ,  _isAnimated         = false
+             ,  _isHovered          = false
+             ,  formStoryCreationC  = this.node.one('#appMenuInnerForm')
+             ,  formStoryCreationF  = this.node.one('#formStoryCreation')
+             ,  createHistory       = this.node.one('#createHistory')
+             ,  urlParams           = Y.mojito.util.copy(this.mojitProxy.context)
+             ,  appMenuInnerCont    = root.node.one('#appMenuInnerCont');
 
-            var me = this.node
-             ,  clickOverBase = this.node.one('#clickOverBase')
-             ,  _isAnimated   = false
-             ,  _isHovered    = false;
-
-            function animation(action, target){
-                
-                if(_isAnimated){ return };
-                    _isAnimated =true;
-
-                switch(action){
-                    case 'open':
-
-                    target.transition({
-                        easing: 'ease',
-                        duration: 0.3, // seconds
-                        marginLeft: '0'
-                    }, function() {
-                        _isAnimated = false;
-                        
-                    });
-
-                    break;
-
-                    case 'close':
-                    Y.log(_isHovered)
-                   // if(_isHovered)return;
-
-                    target.transition({
-                        easing: 'ease',
-                        duration: 0.2, // seconds
-                        marginLeft: '-114px'
-                    }, function() {
-                        target.setAttribute('style', '')
-                      
-                        _isAnimated = false;
-                    });
-
-                    break;
-                }
-                
-            } 
-
-            //base menu
             
-         /*   clickOverBase.on('mouseenter', function(e){
-                _isHovered = true;
-                e.stopPropagation();
-                e.preventDefault();
+            this.createStoryEvent = createHistory.on('click', function(e){
+                
+                var displayType = (appMenuInnerCont.hasClass('opened')) ? 'none' : 'block';
 
-                var _this = e.target
-                 ,  classTarget = 'appMenuClose';
+                formStoryCreationC.setStyles({
+                    display: displayType
+                });
+
+
+
+                Y.later(100, this, function(){
+                                    appMenuInnerCont.toggleClass('opened');
+                    formStoryCreationC.toggleClass('openedf');    
+                })
+                
+
 
                 
-                 
-                animation('open', me.one('#appMenuInnerCont'))
-                openMenu = true;
             });
 
-            clickOverBase.on('mouseout', function(e){
-                
-                e.stopPropagation();
+            this.form = formStoryCreationF.one('form').on('submit', function(e){
+              
                 e.preventDefault();
 
-                var _this = e.target
-                 ,  classTarget = 'appMenuOpen';
-
-                animation('close', me.one('#appMenuInnerCont')) 
-                _isHovered = false;
-            });*/
-
-
-            //bottons
-
-         /*   this.node.delegate('click', function(e){
-                //
-                Y.log('this  '+ e.currentTarget)
-            }, 'li');
-
-             this.node.delegate('mouseenter', function(e){
-                _isHovered = true;
-                e.stopPropagation();
-                e.preventDefault();
+                var _form = e.target; 
                 
-                if(_isAnimated){ return };
-                    animation('open', me.one('#appMenuInnerCont'))
-            }, 'li');
 
-            this.node.delegate('mouseout', function(e){
+                //the inner object must be called body.
+                var params = {
+                    body  : {
+                        title        : _form.one('#title').get('value'),  
+                        gender       : _form.one('#gender').get('value'),
+                        storyTellers : _form.one('#storyTellers').get('value'),
+                        restricted   : _form.one('#restricted').get('checked')
+
+                    }    
+                } 
+
+             
+               
                 
-                e.stopPropagation();
-                e.preventDefault();
+                //sends params to createStory on controller
+                root.mojitProxy.broadcast('createStory', {params: params}, function(){Y.log('tryyyyyyyy ..........')});  
 
-                if(_isAnimated){ return };
-                    animation('close', me.one('#appMenuInnerCont'))
+                root.mojitProxy.invoke('createStory', { params: params  }, function(err, markup){
+                    if (err) throw err;
 
-                _isHovered = false;     
-            }, 'li');  */
-        }
+                    root.mojitProxy.refreshView({
+                        params: {
+                            ur: urlParams
+                        }
+                    }); 
+
+                });
+
+            });
+
+        },
+
+        //happens when the partial is refreshed
+        onRefreshView : function(){
+       
+            this.createStoryEvent.detach(true);
+            this.bind.apply(this, arguments);
+        } 
 
     };
 

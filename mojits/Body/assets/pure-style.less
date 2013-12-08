@@ -87,9 +87,6 @@ text-rendering: optimizeLegibility;
 
 .pure-button{
 	width:100%;
-    color: #444; /* rgba not supported (IE 8) */
-    color: rgba(0, 0, 0, 0.80); /* rgba supported */
-    *color: #444; /* IE 6 & 7 */
     border: 1px solid #999;  /*IE 6/7/8*/
     border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
     background-color:  @colorButtonsTheme;
@@ -176,6 +173,19 @@ text-rendering: optimizeLegibility;
      color: #333;
      z-index:1002;
      overflow: auto;
+}
+
+
+.boxHeight-1{
+    height: @unitSize;
+}
+
+.boxHeight-1-2{
+    height: @unitSize/2;
+}
+
+.boxHeight-2{
+    height: @unitSize*2;
 }
 
 

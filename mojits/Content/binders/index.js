@@ -23,7 +23,7 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
             var root = this;
             root.mojitProxy = mojitProxy;
 
-            
+            Y.log('.................................. Im in init content bind ......................................')
         },
 
         /**
@@ -37,23 +37,22 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
              ,  urlParams = Y.mojito.util.copy(this.mojitProxy.context)
              ,  addSubjectBt = node.one(".addSubject");
 
+            Y.log('.................................. Im in init content bind  ......................................') 
+
             root.node = node;
 
-            root.node.one(".addSubject").on('tap', function(e){
+            this.addSubjectButton = root.node.one(".addSubject").on('tap', function(e){
 
-                Y.log('me clica');
-
+                Y.log('Im inside .addSubject button');
                 root.mojitProxy.broadcast('openAddSubject', {url: 'text'});  
-
-
-
+            
             });
 
             var container  = root.node.one('#container')
              ,  items      = container.all('.item')
              ,  totalWidth = 0;
 
-             Y.log(container);
+            Y.log(container);
 
             Y.each(items, function(item){
                 
@@ -76,7 +75,6 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
 
 
             root.mojitProxy.listen('saveSubject', function(data){
-                
                 var params = data.data.params;
               
                 root.mojitProxy.invoke('saveSubject', { params: params  }, function(err, markup){
@@ -84,29 +82,22 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
 
                     root.mojitProxy.broadcast('closeAddSubject', {state: 'all good'});
 
-                    /*root.mojitProxy.refreshView({
+                    root.mojitProxy.refreshView({
                         params: {
                             ur: urlParams
                         }
-                    }); */
+                    });
 
                 });
             });
-            /**
-             * Example code for the bind method:
-             *
-             * node.all('dt').on('mouseenter', function(evt) {
-             *   var dd = '#dd_' + evt.target.get('text');
-             *   me.node.one(dd).addClass('sel');
-             *
-             * });
-             * node.all('dt').on('mouseleave', function(evt) {
-             *   
-             *   var dd = '#dd_' + evt.target.get('text');
-             *   me.node.one(dd).removeClass('sel');
-             *
-             * });
-             */
+          
+        },
+        onRefreshView : function(){
+            Y.log('---------------------------------------refreshed------------------------------------------------------------');
+
+            this.mojitProxy.unlisten('saveSubject');
+            this.addSubjectButton.detach(true);
+            this.bind.apply(this, arguments);
         }
 
     };

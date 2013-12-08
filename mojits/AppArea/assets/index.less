@@ -6,6 +6,7 @@
 
 @unitSize: 86px;
 @withNumColumns:3;
+@withNumColumnsForm:5;
 @viewableColumn:1;
 @totalviewColumn: @withNumColumns - @viewableColumn;
 
@@ -14,17 +15,38 @@
 #appMenuExterCont{
 	overflow: hidden;
 	height: 100%;
+
 }
 
 #appMenuInnerCont{
-	width: @unitSize * @withNumColumns;
 	height: 100%;
-	margin-left: -(@unitSize * @totalviewColumn);  
+	margin-left: -(@unitSize * @totalviewColumn);
 	-webkit-transition: margin-left 0.5s ease;
 	-moz-transition: margin-left 0.5s ease;
 	-o-transition: margin-left 0.5s ease;
 	-ms-transition: margin-left 0.5s ease;
-	transition: margin-left 0.5s ease;
+	transition: margin-left 0.5s ease; 
+	
+}
+
+
+.opened{
+	margin-left: 0 !important;
+	width: @unitSize !important;
+	float: left;
+	overflow: hidden;
+	position: relative !important;
+
+
+}
+
+.opened .cutlayer{
+	position: absolute;
+	right: (@unitSize * @withNumColumns) - @unitSize;
+}
+
+.opened .cutlayer > ul{
+	position: absolute !important;
 	
 }
 
@@ -34,7 +56,123 @@
 	margin-left: 0;
 }
 
+#appMenuInnerForm{
+	width: @unitSize * @withNumColumnsForm;
+	margin: 0 -550px 0 @unitSize;
 
+	-webkit-transition: margin-right 0.5s ease;
+	-moz-transition: margin-right 0.5s ease;
+	-o-transition: margin-right 0.5s ease;
+	-ms-transition: margin-right 0.5s ease;
+	transition: margin-right 0.5s ease; 
+
+}
+
+.openedf{
+
+	margin-right: @unitSize !important;
+	
+}
+
+
+.titleWhite {
+  color: #FFFFFF;
+  font-size: 2.2em;
+  letter-spacing: 0.1em !important;
+  line-height: 160px;
+  margin: 0;
+  padding-left: 15px;
+}
+
+.formBig{
+	font-size: 130%;
+}
+
+.formBig input[type="text"] {
+	width: 100%;
+	border-top:0px solid white;
+	border-right:0px solid white;
+	border-bottom:1px solid white;
+	border-left:0px solid white;
+	background-color: transparent;
+	
+	
+							
+}
+.formBig input {color:#6f6f78; }
+.formBig input::-webkit-input-placeholder { color:#6f6f78; }
+.formBig input::-moz-placeholder { color:#6f6f78; } /* firefox 19+ */
+.formBig input:-ms-input-placeholder { color:#6f6f78; } /* ie */
+.formBig input:-moz-placeholder { color:#6f6f78; }
+
+
+.formBig select{
+	-webkit-appearance: none;
+	-moz-appearance:    none;
+   	appearance:         none;
+	width: 100%;
+	border:0px;
+	background-color: #3c3c48;
+	color: #6f6f78;
+	padding: 5px;
+
+}
+
+.formBig label{
+	letter-spacing: 0 !important;
+	color: #6f6f78;
+}
+
+.formBig .litteText{
+	margin: 0;
+	color: #6f6f78;
+	font-size: 60% !important;
+}
+
+
+
+input:focus, textarea:focus, select:focus {
+	   outline: none;
+	   border: none;
+	   color:  lighten(#6f6f78, 25%)
+}
+
+
+.formBig select option:hover {
+    background-color: #5a5a66;
+}
+
+::selection {
+	background: #5a5a66; /* Safari */
+	}
+::-moz-selection {
+	background: #5a5a66; /* Firefox */
+}
+
+.formBig button{
+	color: white;
+	font-size: 125%;
+	height: @unitSize;
+	font-weight: bold;
+}
+
+
+
+.pure-button-cancel{
+	
+	background-color: #5a5a65 !important;
+	
+}
+
+.pure-button-cancel:hover{
+	
+	background-color: #4b4b56 !important;
+	
+}
+
+.pure-button-cancel:hover{
+	background-color: #4b4b54;
+}	
 
 
 .appMenu{
@@ -48,9 +186,7 @@
 
 }
 
-.appMenu li{
-	height: @unitSize;
-}
+
 
 .appMenu .pure-menu{
 	background: transparent;
@@ -91,11 +227,17 @@
 /************** create story button ***********/
 #green-theme{
 	background-color: @colorButtonsTheme !important;
+	width: @unitSize * @withNumColumns;
 }
 
 #green-theme:hover, #green-theme:focus{
 	background-color: @colorButtonsThemeHover !important;
 }
+
+#green-theme .opened{
+	content: 'X';
+}
+
 
 
 

@@ -1,7 +1,8 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
 YUI.add('ContentModelStory', function(Y, NAME) {
 
-    var mongodb = require('mongodb');    
+    var mongodb = require('mongodb');
+	var uri = 'mongodb://test:test@ds053128.mongolab.com:53128/yaarns1';
 
 /**
  * The ContentModelFoo module.
@@ -69,76 +70,45 @@ YUI.add('ContentModelStory', function(Y, NAME) {
                                 }
                             }
             */
-
-                        
-
-            var server = new mongodb.Server('ds029798.mongolab.com', 29798, {auto_reconnect : true});
-            var db     = new mongodb.Db('habbendb', server, {safe : false});
-
                      
-
-            db.open(function(err, client) {
-                
-                if (err) throw err;
-
-                client.authenticate('habben_user', 'habbenps', function(err, success) {
-                    
-                    if (err) throw err;
-                   
-                    client.createCollection('stories', function(err, col){
-                        
-                        if (err) throw err;
-                        
-                        var resultp = col.find(type).toArray(function(error, records){
-                            
-                            if (err) throw err;
-
-                            callback({some:records});
-                            
-                            db.close();
-                          
-                        }); 
-
-                    })
-
-                });
-            });
-
-          // callback({some:'nothing'});
-
+			mongodb.MongoClient.connect(uri, function (err, db) {
+				if(err) throw err;
+				
+				var stories = db.collection('stories'),
+					storytellers = db.collection('storytellers');
+				
+				stories.find(type).toArray(function (err, docs){
+					if (err) throw err;
+						
+					callback({some:docs});
+					
+					db.close(function (err) {
+						if(err) throw err;
+					});
+				});
+			});
         }, 
 
         saveSubject: function(data, callback){
             Y.log('from saveSubject.......');
             Y.log(data);
 
-            var server = new mongodb.Server('ds029798.mongolab.com', 29798, {auto_reconnect : true})
-             ,  db     = new mongodb.Db('habbendb', server, {safe:false})
-             ,  data   = data;
-
-                         
-
-            db.open(function(err, client) {
-                
-                if (err) throw err;
-
-                client.authenticate('habben_user', 'habbenps', function(err, success) {
-                    
-                    if (err) throw err;
-                   
-                    client.createCollection('stories', function(err, col){
-                        if (err) throw err;
-                        
-                            
-                        col.insert( data,  function(err, records){
-                                
-                                    callback ({some:records[0]});
-                                    db.close();
-                                 
-                        });
-                    })
-                });
-            });
+			mongodb.MongoClient.connect(uri, function (err, db) {
+				if(err) throw err;
+				
+				var stories = db.collection('stories'),
+					storytellers = db.collection('storytellers');
+				
+				stories.insert(data, function (err, result) {
+					if (err) throw err;
+					
+					callback({some:result[0]});
+					
+					db.close(function (err) {
+						if(err) throw err;
+					});
+				});
+			});
         }  
 
     };

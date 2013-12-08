@@ -8,10 +8,7 @@ YUI.add('AppArea', function(Y, NAME) {
  */
 
     /**
-     * Constructor for the Controller class.
-     *
-     * @class Controller
-     * @constructor
+     *  ZEN: needs to be connected to model
      */
     Y.namespace('mojito.controllers')[NAME] = {
 
@@ -23,8 +20,21 @@ YUI.add('AppArea', function(Y, NAME) {
          */
         index: function(ac) {
             ac.done();
+        },
+
+        createStory : function(ac){
+
+            
+            Y.log('invoked............');
+            Y.log(ac.params);
+
+            Y.log(ac.params.getFromMerged('title'));
+
+            Y.log('invoked............');
+
+            ac.done();
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'AppAreaModelFoo']});
+}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-params-addon', 'mojito-models-addon', 'AppAreaModelFoo']});
