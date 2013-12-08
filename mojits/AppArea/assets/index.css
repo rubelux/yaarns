@@ -30,9 +30,9 @@ input:focus,textarea:focus,select:focus{outline:none;border:none;color:#b0b0b6}
 .appMenu .pure-menu .pure-menu-open{background:#31313e !important}
 .appMenu .pure-menu .pure-menu-heading{margin:0 !important;background-color:#31313e !important}
 .appMenu .pure-menu li a{color:#fff}
-#search-theme{background-color:#5a5a66 !important}
+#search-theme{background-color:#5a5a66 !important;width:258px}
 #search-theme:hover,#search-theme:focus{background-color:#505070 !important}
-#green-theme{background-color:#43eebf !important;width:258px}
+#green-theme{background-color:#43eebf !important}
 #green-theme:hover,#green-theme:focus{background-color:#00d3b2 !important}
 #green-theme .opened{content:'X'}
 .searchIcon{display:block;text-indent:-9999px;width:86px;height:86px;background:url("/static/AppArea/assets/imgs/icons/search-icon.svg") no-repeat scroll center center / 60px 60px transparent;}

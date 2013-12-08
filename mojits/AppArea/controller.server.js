@@ -19,7 +19,15 @@ YUI.add('AppArea', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
-            ac.done();
+            var req = ac.http.getRequest();
+            
+            if(req.user){
+                ac.done({ username: req.user.username});
+            }else{
+                ac.done();
+            }
+
+            
         },
 
         createStory : function(ac){
@@ -37,4 +45,4 @@ YUI.add('AppArea', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-params-addon', 'mojito-models-addon', 'AppAreaModelFoo']});
+}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-params-addon', 'mojito-models-addon' , 'mojito-http-addon']});

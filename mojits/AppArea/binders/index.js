@@ -45,25 +45,28 @@ YUI.add('AppAreaBinderIndex', function(Y, NAME) {
              ,  appMenuInnerCont    = root.node.one('#appMenuInnerCont');
 
             
-            this.createStoryEvent = createHistory.on('click', function(e){
-                
-                var displayType = (appMenuInnerCont.hasClass('opened')) ? 'none' : 'block';
+            if(this.node.one('#createHistory')){ //it will be null if there's not user
 
-                formStoryCreationC.setStyles({
-                    display: displayType
+                this.createStoryEvent = createHistory.on('click', function(e){
+                    
+                    var displayType = (appMenuInnerCont.hasClass('opened')) ? 'none' : 'block';
+
+                    formStoryCreationC.setStyles({
+                        display: displayType
+                    });
+
+
+
+                    Y.later(100, this, function(){
+                        
+                        appMenuInnerCont.toggleClass('opened');
+                        formStoryCreationC.toggleClass('openedf');    
+                    
+                    })
+                    
                 });
 
-
-
-                Y.later(100, this, function(){
-                                    appMenuInnerCont.toggleClass('opened');
-                    formStoryCreationC.toggleClass('openedf');    
-                })
-                
-
-
-                
-            });
+            }
 
             this.form = formStoryCreationF.one('form').on('submit', function(e){
               

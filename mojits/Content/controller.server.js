@@ -25,183 +25,120 @@ YUI.add('Content', function(Y, NAME) {
             var ac = ac;
             var _this = this;
 
-             /*var model = ac.models.get('ContentModelStory');
 
-         
-          
-            model.search(function(data){
-                 Y.log("from controler")
-                 Y.log(data);
-                 Y.log("--------from controler-----------------")
-               
-            }); */
+            var model = ac.models.get('ContentModelStory');
 
+            //first attr is empty because its null criteria for the mongo to find so it returns all data
+            var dataFg =  model.getStories({}, function(data){
+             
+                var obChildrenFor  = _this.makeObject(data.some);
 
-            /*
-           _this.cfg = {
-                    
-                    children: {
-                        contentText : {
-                            type: "ContentText",
-                            config: {
-                                "caller": "Content",
-                                "tdata" : {
-                                    content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
-                                    title   : "1st Part",
-                                    date    : new Date()
-                                }
-                            }
-                        },
-                        contentText2 : {
-                            type: "ContentText",
-                            config: {
-                                "caller": "Content",
-                                "tdata" : {
-                                    content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
-                                    title   : "2st Part",
-                                    date    : new Date()
-                                }
-                            }
-                        }
-                    },
+                ac.composite.execute( obChildrenFor,  function(data, meta){
+                     
+                    var template = {};
+                    template.content = data
 
+                    ac.done(template, meta);
 
-
-                    assets: {
-                        top: {
-                            css: [
-                                "/static/ContentText/assets/index.css"
-                            
-                            ]
-                        }
-                    }
-                };    
-
-                ac.composite.execute( _this.cfg,  function(data, meta){
-                         
-                        console.log("--------------------data------------------------");   
-                        console.log(data, meta);
-                        console.log("--------------------data------------------------")   
-                        
-                        ac.done({});
-
-                          
-                });
-
-                */ 
-
-                var model = ac.models.get('ContentModelStory');
-
-                //first attr is empty because its null criteria for the mongo to find so it returns all data
-                var dataFg =  model.getStories({}, function(data){
-                 
-                    var obChildrenFor  = _this.makeObject(data.some);
-
-                    ac.composite.execute( obChildrenFor,  function(data, meta){
-                         
-                        var template = {};
-                        template.content = data
-
-                        ac.done(template, meta);
-
-                          
-                    });   
-                
-                       
-                });
+                      
+                });   
+            
+                   
+            });
 
             
-            },
+        },
 
-            //get all subjects from model 
-            getSubjects : function(ac){
-             
-               // ac.done();
-            },
+        //get all subjects from model 
+        getSubjects : function(ac){
+         
+           // ac.done();
+        },
 
-            makeObject : function(rawData){
+        makeObject : function(rawData){
 
-                //var rawData =     
-                  /*
-                          contentText3 : {
-                            type: "ContentText",
-                            config: {
-                                "caller": "Content",
-                                "tdata" : {
-                                    content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
-                                    title   : "3st Part",
-                                    date    : "22/12/13"
-                                }
+            //var rawData =     
+              /*
+                      contentText3 : {
+                        type: "ContentText",
+                        config: {
+                            "caller": "Content",
+                            "tdata" : {
+                                content : "It's not always a given that festivals act as an extension of their locale's identity, but this year it was especially unclear whether Barcelona's Primavera Sound wanted to be known more as a Spanish music festival or a music festival that happens to take place in Spain. The booking of Spanish acts that possess a lower profile to the many travellers that come through for the festival suggested a sort of national allegiance; on the other hand, the low attendance that went along with these acts' somewhat-buried sets suggested that representing a musical heritage is not the festival's highest priority. " ,
+                                title   : "3st Part",
+                                date    : "22/12/13"
                             }
                         }
-                    */
+                    }
+                */
 
-                var _obForDynamicMojits = {}
-                 ,  counter = 0;
-               
-                Y.Array.each(rawData, function(array, index){
-                    
-                    //if( index === undefined ) return;
-                    //var rawData = JSON.parse(rawData[counter]);
-                    var content = String(rawData[counter].content)
-                     ,  date    = rawData[counter].creationTime;
-                     //formating object
-                    _obForDynamicMojits['contentText'+counter]                 = {};
-                    _obForDynamicMojits['contentText'+counter].type            = "ContentText";
-                    _obForDynamicMojits['contentText'+counter].config          = {};
-                    _obForDynamicMojits['contentText'+counter].config.caller   = "Content";
-                    _obForDynamicMojits['contentText'+counter].config.content  = rawData[counter].content;
-                    _obForDynamicMojits['contentText'+counter].config.title    = rawData[counter].title;
-                    _obForDynamicMojits['contentText'+counter].config.date     = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
+            var _obForDynamicMojits = {}
+             ,  counter = 0;
+           
+            Y.Array.each(rawData, function(array, index){
                 
-                    counter++
-                 
-                   
-
-                });
-
-
-
-                var cfg = {};
-                    
-                    cfg.children = _obForDynamicMojits;
-                    cfg.assets = {};
-                    cfg.assets.top = {};
-                    cfg.assets.top.css = ["/static/ContentText/assets/index.css"];
-
-                
-
-                return cfg;
-
-            },
-
-
-            saveSubject : function(ac){
-                Y.log('yess from controler of content');
-
-                var model = ac.models.get('ContentModelStory')
-                 ,  root  = this
-                 ,  ac    = ac
-
-                 , rawSubject = {
-                    creationTime : new Date(),
-                    title        : ac.params.getFromMerged('title'),
-                    content      : ac.params.getFromMerged('body'),
-                    type         : "ContentText"
-                }
-
-                model.saveSubject(rawSubject , function(data){
-                        Y.log('------------------------new subject save----------------------------')
-                     //root.index(ac);
-                     //ac.http.redirect('/');
-                    ac.done();
-                });
+                //if( index === undefined ) return;
+                //var rawData = JSON.parse(rawData[counter]);
+                var content = String(rawData[counter].content)
+                 ,  date    = rawData[counter].creationTime;
+                 //formating object
+                _obForDynamicMojits['contentText'+counter]                 = {};
+                _obForDynamicMojits['contentText'+counter].type            = "ContentText";
+                _obForDynamicMojits['contentText'+counter].config          = {};
+                _obForDynamicMojits['contentText'+counter].config.caller   = "Content";
+                _obForDynamicMojits['contentText'+counter].config.content  = rawData[counter].content;
+                _obForDynamicMojits['contentText'+counter].config.title    = rawData[counter].title;
+                _obForDynamicMojits['contentText'+counter].config.date     = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
+            
+                counter++
+             
                
-                //Y.log(ac.params.getFromMerged('title'));
-                 Y.log('---content');
-                 //
-               // clearTimeout(ac._timer);
+
+            });
+
+
+
+            var cfg = {};
+                
+                cfg.children = _obForDynamicMojits;
+                cfg.assets = {};
+                cfg.assets.top = {};
+                cfg.assets.top.css = ["/static/ContentText/assets/index.css"];
+
+            
+
+            return cfg;
+
+        },
+
+
+        saveSubject : function(ac){
+          
+            Y.log('yess from controler of content');
+
+            var model = ac.models.get('ContentModelStory')
+             ,  root  = this
+             ,  ac    = ac
+
+             , rawSubject = {
+                creationTime : new Date(),
+                title        : ac.params.getFromMerged('title'),
+                content      : ac.params.getFromMerged('body'),
+                type         : "ContentText"
             }
+
+            model.saveSubject(rawSubject , function(data){
+                Y.log('------------------------new subject save----------------------------')
+                 //root.index(ac);
+                 //ac.http.redirect('/');
+                ac.done();
+            });
+           
+            //Y.log(ac.params.getFromMerged('title'));
+             Y.log('---content');
+             //
+           // clearTimeout(ac._timer);
+        }
 
 
 
