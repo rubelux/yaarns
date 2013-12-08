@@ -34,6 +34,10 @@ YUI.add('Content', function(Y, NAME) {
              
                 var obChildrenFor  = _this.makeObject(data.some);
 
+                //make div width in server side to force subjects to align horizontally, and not wait for DOM to be render
+                var widthDiv = Y.Object.size(obChildrenFor.children)*516 //516px is what Im using as width for one single item.
+                
+
                 ac.composite.execute( obChildrenFor,  function(data, meta){
                      
                     var template = {};
@@ -41,7 +45,9 @@ YUI.add('Content', function(Y, NAME) {
 
                     //add user
                     if(req.user){ template.username = req.user.username }; 
-               
+                    
+                    //add total content width
+                    template.totalWidth = widthDiv + 'px';
                
                     ac.done(template, meta);
 

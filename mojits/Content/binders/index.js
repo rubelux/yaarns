@@ -56,21 +56,20 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
 
             Y.log(container);
 
-            Y.each(items, function(item){
+            // Y.each(items, function(item){
                 
-                item.setStyles({
-                    position: 'absolute',
-                    left: totalWidth + 'px',
-                    top: '0px'
-                }); 
+            //     item.setStyles({
+            //         position: 'absolute',
+            //         left: totalWidth + 'px',
+            //         top: '0px'
+            //     }); 
 
-                totalWidth += item.get('offsetWidth');
+            //     totalWidth += item.get('offsetWidth');
 
-            });
+            // });
 
             container.setStyles({
                 position : 'relative',
-                width    : totalWidth + 'px',
                 height   : container.get('winHeight')
              });
 
