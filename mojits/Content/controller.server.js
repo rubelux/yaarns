@@ -24,6 +24,7 @@ YUI.add('Content', function(Y, NAME) {
         index: function(ac) {
             var ac = ac;
             var _this = this;
+            var req = ac.http.getRequest();
 
 
             var model = ac.models.get('ContentModelStory');
@@ -36,8 +37,12 @@ YUI.add('Content', function(Y, NAME) {
                 ac.composite.execute( obChildrenFor,  function(data, meta){
                      
                     var template = {};
-                    template.content = data
+                    template.content = data;
 
+                    //add user
+                    if(req.user){ template.username = req.user.username }; 
+               
+               
                     ac.done(template, meta);
 
                       
@@ -113,7 +118,7 @@ YUI.add('Content', function(Y, NAME) {
 
 
         saveSubject : function(ac){
-          
+
             Y.log('yess from controler of content');
 
             var model = ac.models.get('ContentModelStory')

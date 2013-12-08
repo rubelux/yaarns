@@ -1,6 +1,7 @@
 <div id="{{mojit_view_id}}" class="content">
-   	
-   	<div class="addSubject"><span>Add Subject</span></div>
+   	{{#if username}}
+   		<div class="addSubject"><span>Add Subject</span></div>
+    {{/if}} 
 
    	<div id="container">
 	    {{#each content}}

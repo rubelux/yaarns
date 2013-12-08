@@ -2,7 +2,7 @@
     
     {{#if username}}
 
-        <div id="userMenuExterCont">
+        <div id="userMenuExterCont" class="colorUserStandard">
             <div id="userMenuInnerCont" class="pure-menu pure-menu-open">
                 <ul>
                 <li>
@@ -81,24 +81,37 @@
 
     {{else}}
 
-        <div id="userMenuExterCont">
-            <div id="userMenuInnerCont" class="pure-menu pure-menu-open">
+        <!-- arrow-->
 
-                <form action="/loginSubmit" method="post" id='myForm'>
-                    <div>
-                        <label>Username:</label>
-                        <input id="userName" type="text" name="username"/><br/>
-                    </div>
-                    <div>
-                        <label>Password:</label>
-                        <input id="password" type="password" name="password"/>
-                    </div>
-                    <div>
-                        <input type="submit" value="Submit" id="mySub"/>
-                    </div>
-                </form>
 
+
+        <div id="userMenuExterCont" >
+            <div id="userMenuInnerCont" class="pure-menu pure-menu-open openedGreen colorGreenLoggin">
+                <ul>
+                   
+                    <li></li>
+                     <li><h1 style="color:white;">Reinvent your life story</h1></li>
+                    <li></li>
+                    <li>
+                        <form action="/loginSubmit" method="post" id='myForm'>
+                            <div>
+                                <label>Username:</label>
+                                <input id="userName" type="text" name="username"/><br/>
+                            </div>
+                            <div>
+                                <label>Password:</label>
+                                <input id="password" type="password" name="password"/>
+                            </div>
+                            <div>
+                                <input type="submit" value="Submit" id="mySub"/>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
             </div>
+
+            <div class="greenArrow" style="float:left;">
+            </div>    
         </div>        
     
     {{/if}} 

@@ -21,7 +21,8 @@ YUI.add('AppArea-tests', function(Y) {
                 modelData,
                 assetsResults,
                 doneResults;
-            modelData = { x:'y' };
+                modelData = { x:'y' };
+                
             ac = {
                 assets: {
                     addCss: function(css) {

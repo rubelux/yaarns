@@ -37,16 +37,18 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
              ,  urlParams = Y.mojito.util.copy(this.mojitProxy.context)
              ,  addSubjectBt = node.one(".addSubject");
 
-            Y.log('.................................. Im in init content bind  ......................................') 
+            root.node = node; 
 
-            root.node = node;
+            if(addSubjectBt !== null){ //check is userName is available and button is visible
 
-            this.addSubjectButton = root.node.one(".addSubject").on('tap', function(e){
+                this.addSubjectButton = root.node.one(".addSubject").on('tap', function(e){
 
-                Y.log('Im inside .addSubject button');
-                root.mojitProxy.broadcast('openAddSubject', {url: 'text'});  
-            
-            });
+                    Y.log('Im inside .addSubject button');
+                    root.mojitProxy.broadcast('openAddSubject', {url: 'text'});  
+                
+                });
+
+            };
 
             var container  = root.node.one('#container')
              ,  items      = container.all('.item')
