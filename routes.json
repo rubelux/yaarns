@@ -21,14 +21,19 @@
     	"call": "appArea.index"
     },
     "userArea":{
-    	"verbs":["get"],
+    	"verbs":["get", "post"],
     	"path":"/userArea",
     	"call": "userArea.index"
     },
-       "storyArea":{
+    "storyArea":{
     	"verbs":["get"],
     	"path":"/storyArea",
     	"call": "storyArea.index"
+    },
+    "loginSubmit": {
+      "verbs": ["get", "post"],
+      "path": "/loginSubmit",
+      "call": "loginSubmit.submit"
     }
 
 }]

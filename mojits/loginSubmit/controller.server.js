@@ -25,6 +25,7 @@ YUI.add('loginSubmit', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
+            Y.log('------------------------------------------------------------------------from loginSubmit-----------------------------------------------------------------------------')
               ac.done({
                     status: 'Mojito is working.'
             });

@@ -23,14 +23,8 @@
                                 "userArea":{
                                     "type": "UserArea"
                                 },
-                                "storyArea":{
-                                    "type" : "StoryArea"
-                                },
                                 "content":{
                                     "type": "Content"
-                                },
-                                "contentAddSubject":{
-                                    "type": "ContentAddSubject"
                                 }
 
 
@@ -39,6 +33,9 @@
                     }
                      
                 }
+            },
+            "loginSubmit" : {
+               "type" : "loginSubmit"
             }    
         }
     },
