@@ -1,0 +1,266 @@
+
+
+/*Global variables*/
+@color: #F0F0F0;
+@colorBase: #F5F5F5;
+@colorMeddium: #EEE;
+@transparency: #000;
+/*green theme*/
+@colorButtonsTheme: #43eebf;
+@colorButtonsThemeHover:#00d3b2;
+
+@colorButtonsThemeInvert: #5a5a66;
+@colorButtonsThemeHoverInvert:#43eebf;
+
+/*sizes units ..padding*/
+@paddingG: 14px; 
+@unitSize: 86px;
+
+
+
+/*import icon font*/
+@import "iconfont.import.less"; /*source from http://lesselements.com/*/
+
+/*import fundation*/
+@import "pure_less/elements.import.less"; /*source from http://lesselements.com/*/
+
+/*import base */
+@import "pure_less/base-context.import.less";
+@import "pure_less/base.import.less";
+
+/*import buttons*/
+@import "pure_less/buttons-core.import.less";
+@import "pure_less/buttons.import.less";
+
+/*import forms*/
+@import "pure_less/forms.import.less";
+
+
+/*import grids*/
+@import "pure_less/grids.import.less";
+
+
+/*import menus*/
+@import "pure_less/menus-core.import.less";
+
+/*extrax*/
+@import "pure_less/extras.import.less";
+
+
+/* load sections*/
+@import "cssAreas/appArea.import.less";
+@import "cssAreas/storyArea.import.less";
+@import "cssAreas/userArea.import.less";
+@import "cssAreas/contentArea.import.less";
+@import "cssAreas/createStoryArea.import.less";
+
+/*fonts*/
+
+@font-face{ font-family: 'nexa bold'; 
+                    src: url('webfont/nexa_bold-webfont.eot'); 
+                    src: url('webfont/nexa_bold-webfont.eot?#iefix') format('embedded-opentype'), 
+                    url('webfont/nexa_bold-webfont.woff') format('woff'), 
+                    url('webfont/nexa_bold-webfont.ttf') format('truetype'), 
+                    url('webfont/nexa_bold-webfont.svg#webfont') format('svg'); }
+
+@font-face{ font-family: 'nexa light'; 
+                    src: url('webfont/light-webfont.eot'); 
+                    src: url('webfont/nexa_light-webfont.eot?#iefix') format('embedded-opentype'), 
+                    url('webfont/nexa_light-webfont.woff') format('woff'), 
+                    url('webfont/nexa_light-webfont.ttf') format('truetype'), 
+                    url('webfont/nexa_light-webfont.svg#webfont') format('svg'); }  
+
+
+
+
+
+html, button, input, select, textarea{
+font-family: 'nexa light';
+font-style: normal;
+font-weight: 400; 
+letter-spacing: 0.05em;
+text-rendering: optimizeLegibility;
+}
+
+
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+html,body{height: 100% !important; overflow-x: auto; overflow-y: hidden;  -webkit-overflow-scroll: touch;}
+
+body{background-color: #e6e6e6; height: 100%; overflow: hidden; }
+
+
+.nav{
+    position: fixed;
+    
+}
+
+/*green theme*/
+.pure-test{
+  color: @color;
+  /*.gradient(@colorBase, @colorMeddium, @transparency);*/
+
+};
+
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus {
+  background-color: @colorButtonsThemeHover;
+  color: #fff;
+
+};
+
+.pure-button-invert-hover,
+.pure-button-invert:hover,
+.pure-button-invert:focus {
+  background-color: @colorButtonsThemeHoverInvert;
+color: #fff;
+};
+
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active {
+	background-color: @colorButtonsThemeHover;
+    color: #fff;
+};
+
+.pure-button-invert[disabled],
+.pure-button-invert-disabled,
+.pure-button-invert-disabled:hover,
+.pure-button-invert-disabled:focus,
+.pure-button-invert-disabled:active {
+    background-color: @colorButtonsThemeHoverInvert;
+    color: #fff;
+};  
+
+.pure-button-primaryInvert,
+.pure-button-primaryInvert-selected,
+a.pure-button-primaryInvert,
+a.pure-button-primaryInvert-selected {
+    background-color: @colorButtonsThemeInvert;
+    color: #fff;
+}
+
+.pure-button{
+	width:100%;
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color:  @colorButtonsTheme;
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold;
+}; 
+
+
+.pure-button-invert{
+    width:100%;
+    border: 1px solid #999;  /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0);  /*IE9 + everything else*/
+    background-color:  @colorButtonsThemeInvert;
+    font-size: 21px;
+    font-weight: bold;
+}; 
+
+
+/*generals helpers*/
+
+.float-left{
+     float:left;
+}
+.float-right{
+	float: right;
+}
+
+.clear-fix:after
+{
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear-fix
+{
+    zoom: 1;
+}
+
+.make-block{
+	display: block;
+}
+
+.circular-icons{
+    line-height: @unitSize;
+    text-align: center;
+}
+
+.circular-icons > img{
+    vertical-align: middle;
+    border-radius: 80%;
+}
+
+.AddpaddingG{
+    padding: @paddingG;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.hoCenterText{
+    text-align: center;
+}
+
+//overlay//
+
+.overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index:1001;
+    background-color:rgba(0,0,0,0.6);
+    filter: alpha(opacity=75);
+
+}
+
+.modal {
+  position: absolute;
+  color: #333;
+  margin-left: -@unitSize * 8 / 2;
+  left: 50%;
+  padding: 16px;
+  z-index: 1002;
+  top: 86px
+}
+
+
+
+
+.boxHeight-1{
+    height: @unitSize;
+}
+
+.boxHeight-1-2{
+    height: @unitSize/2;
+}
+
+.boxHeight-2-1{
+    height: @unitSize/1.3;
+}
+
+.boxHeight-2{
+    height: @unitSize*2;
+}
+
+.boxMargin-half{
+    padding: @unitSize/2;
+}
+
+
+
+

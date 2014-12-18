@@ -1,0 +1,282 @@
+@mainMenuColor: #e6e6ed;
+
+/*green theme*/
+@colorButtonsTheme: #00cea4;
+@colorButtonsThemeHover:#00d3b2;
+@unitSize: 86px;
+@withNumColumns:4;
+@viewableColumn:1;
+@totalviewColumn: @withNumColumns - @viewableColumn;
+@placeholderColor: #5a5a66;
+
+.alert{
+	padding:1.5em 3em;
+	display:block;
+}
+
+.whiteText{
+	color:white;
+}
+
+.details{
+	padding:1em 3em 0.5em; 
+	display:block;
+}
+
+#userMenuExterCont{
+	overflow: hidden;
+	height: 100%;
+}
+
+#userMenuInnerCont{
+	overflow: auto;
+	width: @unitSize * @withNumColumns;
+	height: 100%;
+	margin-left: 0;
+	//padding:20px;
+	margin-left: -(@unitSize * @totalviewColumn); 
+	-webkit-transition: margin-left 0.5s ease;
+	-moz-transition: margin-left 0.5s ease;
+	-o-transition: margin-left 0.5s ease;
+	-ms-transition: margin-left 0.5s ease;
+	transition: margin-left 0.5s ease;  
+	
+}
+
+@-webkit-keyframes fadeIn { from { opacity: 0; margin-top:10px } to { opacity: 1; margin-top:0 } }
+@-moz-keyframes    fadeIn { from { opacity: 0; margin-top:10px } to { opacity: 1; margin-top:0 } }
+@-o-keyframes      fadeIn { from { opacity: 0; margin-top:10px } to { opacity: 1; margin-top:0 } }
+@keyframes         fadeIn { from { opacity: 0; margin-top:10px } to { opacity: 1; margin-top:0 } }
+
+@-webkit-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@-moz-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@-o-keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+.fadeIn{
+	opacity: 0;
+	-webkit-animation: fadeIn ease-out 1;
+	-moz-animation: fadeIn ease-out 1;
+	-o-animation: fadeIn ease-out 1;
+	animation: fadeIn ease-out 1;
+
+	-webkit-animation-fill-mode:forwards;
+	-moz-animation-fill-mode:forwards;
+	-o-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:.3s;
+	-moz-animation-duration:.3s;
+	-o-animation-duration:.3s;
+	animation-duration:.3s;
+}
+
+.fadeOut{
+	opacity: 1;
+	-webkit-animation: fadeOut ease-in 1;
+	-moz-animation: fadeOut ease-in 1;
+	-o-animation: fadeOut ease-in 1;
+	animation: fadeOut ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;
+	-moz-animation-fill-mode:forwards;
+	-o-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:.5s;
+	-moz-animation-duration:.5s;
+	-o-animation-duration:.5s;
+	animation-duration:.5s;
+}
+
+.hidden{
+	opacity: 0;
+}
+
+
+#userMenuInnerCont:hover{
+	margin-left: 0;
+}
+
+.userMenu li{
+	height: @unitSize;
+}
+
+.userMenu li > div{
+	height: 100%;
+}
+
+.userMenu .text2lines{
+	line-height: 0.7em;
+}
+
+.userMenu .text2lines span{
+	font-size: 75%;
+	font-weight: normal;
+	margin-left: 0.75em;
+}
+
+
+.userMenu{
+
+	position: relative;
+	z-index: 1000;
+	float: left;
+	height: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+
+}
+
+
+
+.colorUserStandard{
+	background-color: @mainMenuColor !important;
+}
+
+.colorGreenLoggin{
+	background-color: #43EEBF !important;
+}
+
+.colorGreenLoggin a{
+	color: #FFF !important;
+}
+
+.userMenu .pure-menu{
+	background: transparent;
+    border: 0;
+}
+
+.userMenu .pure-menu .pure-menu-open {
+    background: @mainMenuColor !important;
+}
+
+.userMenu .pure-menu .pure-menu-heading{
+ margin: 0px !important;
+ background-color: @mainMenuColor !important;
+}
+
+.userMenu .pure-menu li a{
+	/*background-color: #fff;*/
+}
+
+.userMenu .pure-menu li a:hover{
+	background-color: saturate(#fff, 10%);
+}
+
+.smallTextBt{
+	font-size: 13px;
+	color: #fff !important;
+	font-weight: bold !important;
+	padding-top: 25px;
+}
+
+.smallTextBt:hover{
+	color: @colorButtonsThemeHover !important;
+	font-weight: bold !important;
+	background-color: transparent !important;
+}
+
+.smallTextBt{
+	margin: 0 auto !important; 
+	
+}
+
+.userMenu .pure-menu li a{
+	color: #31313e;
+}
+
+
+
+
+
+
+/*Icons */
+
+/*Search icon*/
+
+
+
+
+.userTelling{
+
+  display: block;
+  text-indent: -9999px;
+  width: 86px;
+  height: 86px;
+  background:url("/static/UserArea/assets/imgs/icons/user_telling_ico.svg") no-repeat scroll center center / 60% 80% transparent
+ 
+}
+
+.greenArrow{
+	width: 0; 
+	height: 0; 
+	border-top: 360px solid transparent !important; 
+	border-bottom: 360px solid transparent !important;
+	border-left: 70px solid #43EEBF !important;
+}
+
+.openedGreen {
+  float: left;
+  margin-left: 0 !important;
+  overflow: hidden;
+  position: relative !important;
+  width: @unitSize * 4 !important;
+}
+
+//loging form//
+
+.formBig{
+	font-size: 130%;
+}
+
+.formBig input[type="text"], input[type="password"] {
+	width: 100%;
+	border-top:0px solid white;
+	border-right:0px solid white;
+	border-bottom:1px solid #707079;
+	border-left:0px solid white;
+	background-color: transparent;
+}
+
+.formBig input::-webkit-input-placeholder { color:@placeholderColor; }
+.formBig input::-moz-placeholder { color:@placeholderColor; } /* firefox 19+ */
+.formBig input:-ms-input-placeholder { color:@placeholderColor; } /* ie */
+.formBig input:-moz-placeholder { color:@placeholderColor; }
+
+//TODO refract this class with appArea classes//
+.formBig button {
+  background-color: white;
+  
+  font-size: 125%;
+  font-weight: bold;
+  height: 86px;
+  opacity: 0.6;
+}
+
+.formBig .inputAlignDown {
+	padding-top:45px;
+}
+
+.formBig .inputTextFontSide{
+	font-size: 18px;
+}	
+
+.formBig fieldset{
+	padding : 0.35em 2em 0.75em !important;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+<head>
+  <title>yaarns</title>
+</head>
+ 
+ <template name="home">
+ 	<div class="nav">
+	 	{{> appArea}}
+	 	{{> createStory}}
+		{{> userArea}}
+		{{> storyArea}}
+	</div>
+	{{#if addSubjectHelper}}
+		{{> addSubject}}
+	{{/if}}
+		    	
+	
+	{{> yield}}
+
+   </template>
+
+<template name="loading">
+  {{>spinner}}
+</template>
+
+
+
+
+
+
+
+
+
+

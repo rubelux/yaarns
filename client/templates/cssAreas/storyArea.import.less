@@ -1,0 +1,132 @@
+@StoryColor: #ffffff;
+
+@colorButtonStory: #6f6f78;
+@colorButtonStoryHover:#51515d;
+
+
+
+@unitSize: 86px;
+@withNumColumnsStory:3;
+@viewableColumnStory:1;
+@totalviewColumnStory: @withNumColumnsStory - @viewableColumnStory;
+
+
+
+.buttonBorder{
+
+     border-left: 2px solid #e6e6e6;
+     
+}
+
+.buttonAddSubject{
+    color: white;
+    background-color: @colorButtonsThemeApp;
+    position: relative;
+    z-index: 10000;
+}
+
+.buttonAddSubject:hover{
+    color: white;
+    background-color: @colorButtonsThemeAppHover;
+}
+
+.buttonHeaderStory{
+    color:@colorButtonStory;
+
+}
+
+.buttonHeaderStory:hover{
+    color:@colorButtonStory;
+
+}
+
+
+
+.storyArea{
+	height: @unitSize;
+	background-color: @StoryColor;
+	position: fixed;
+}
+
+.storyArea .storyAreaInner{
+	height: @unitSize;
+	margin-left:86px;
+}
+
+.storyMenu{
+	margin: 0;
+	padding: 0;
+}
+
+.floatLeft{
+    float: left;
+}
+
+.floatRight{
+    float: right;
+}
+#storyTitle{
+	width: 40%;
+}
+
+
+.yui3-scrollview-scrollbar{
+ 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAYAAAD9yd/wAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABJJREFUeNpiZGBgSGPAAgACDAAIkABoFyloZQAAAABJRU5ErkJggg==");
+ 	border-radius: 3px;
+}
+
+.button-circular:hover > span{
+
+}	
+
+.headerGeneralTitle{
+    position: relative;
+    margin-left:50%;
+}
+
+.headerTitle {
+    line-height: 46px;
+}
+
+/* === scrollview container and header styles === */
+
+/*
+#scrollview-container {
+    width:400px;
+    float:left;
+    margin:0 10px;
+}
+
+#scrollview-header {
+    background-color:#6d83a1;
+    border:1px solid #000;
+    border-bottom:#2d3033;
+
+    height:44px;
+
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#d8dee6),
+        color-stop(0.01, #b0bccc),
+        color-stop(0.49, #889bb3),
+        color-stop(0.50, #8094ae),
+        to(#6d83a1)     
+    );
+}
+
+#scrollview-header h1 {
+	color: #fff;
+
+    margin:0;
+	padding:10px 0;
+
+	text-align:center;
+
+	font-size:150%;
+	font-weight:normal;
+}
+
+
+*/

@@ -1,0 +1,80 @@
+<!-- *************** appArea *************** -->
+<template name="createStory">
+{{#if writeStory}}
+
+    <div id="createStoryArea">
+        <ul>
+
+            <li class="boxHeight-2">
+                <div class="pure-g">
+               
+                <div class="pure-u-3-3"><h1 class="titleWhite">Create a story</h1></div>
+                </div>   
+
+            </li>
+
+            <li id="formStoryCreation">
+                <div class="pure-g">
+                    <div class="pure-u-3-1">
+
+                        <!-- form -->
+                        <form class="formBig" action="*" method="post" id="addStoryForm">
+                            <fieldset>
+                                    <div class="boxHeight-1">
+                                    
+                                        <input id="title" class="pure-input-1" type="text" name="name" placeholder="Story Title"/>
+                                
+                                    </div>
+                                    
+                                    <div class="boxHeight-1">
+                                        <select id="gender">
+                                            <option>AL</option>
+                                            <option>CA</option>
+                                            <option>IL</option>
+                                        </select>
+                                    </div>    
+
+                                    <div class="boxHeight-1">
+                                        
+                                         <input id="storyTellers" class="pure-input-1" type="text" name="name" placeholder="Add Storytellers"/>
+                                    
+                                    </div>
+
+                                    <div class="pure-g boxHeight-1">
+                                        <label class="pure-u-1-2">
+                                            <input id="restricted" type="checkbox"> Restricted
+                                        </label>
+                                        <p class="pure-u-1-2 litteText" >Only you and the storytellers you added can see the story. You can create two more restricted stories.</p>
+                                    </div> 
+
+                                    <div class="boxHeight-1-2"> </div>   
+                                    
+                                    <div class="pure-g boxHeight-1">
+                                       
+
+                                        <div id="cancel2" class="pure-u-2-5">
+                                            <button type="cancel" id="cancel" class="pure-button pure-button-cancel">Cancel</button>
+                                        </div>
+
+                                        <div class="pure-u-1-5"></div><!-- gap -->
+
+                                         <div id="send" class="pure-u-2-5">
+                                               <button type="submit" id="story" class="pure-button pure-button-primary">Tell IT!</button>
+                                        </div>    
+                                    </div>        
+                            </fieldset>
+                        </form>
+   
+
+                    </div>
+                </div>    
+            </li>
+
+
+       
+
+        </ul>
+    </div>
+
+{{/if}}
+</template>	    	        

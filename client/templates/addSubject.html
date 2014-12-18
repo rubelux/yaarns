@@ -1,0 +1,103 @@
+<template name="addSubject">
+<!-- 	<div id="addSubject">
+			
+		</div> -->
+	<div id="containerSub" class="modal">
+		<div id="left-column" class="pure-menu pure-menu-open">
+			<ul>
+				<li id="textBt" class="boxHeight-1 {{#if textType}}active {{/if}}">
+					<a href="#">
+						<div class="icon icon-font icon-text"></div>
+					</a>
+				</li>
+				<li id="imgBt" class="boxHeight-1 {{#if imgType}}active {{/if}}">
+					<a href="#">
+						<div class="icon icon-font icon-img"></div>
+					</a>
+				</li>
+				<!-- <li id="videoBt" class="boxHeight-1">
+					<a href="#">
+						<div class="icon icon-font icon-create"></div>
+					</a>
+				</li>	 -->
+			</ul>	
+		</div>
+		<div id="right-column">	
+			<form action="/addSubject" class="formBig" id="addSubjectForm" method="post">
+					
+		        	<!-- <div class="">
+		            	<select id="type">	
+		            		<option value=text>Text</option>
+		            		<option value=img>Img</option>
+		            		<option value=video>Video</option>
+		            	</select>
+		            </div> -->
+		            {{#if textType}}
+		            <div class="">
+		            	<h3>ADD TEXT </h3>
+		            	<textarea class="password" id="subjectContent" type="text" name="content" placeholder="text" cols="60" rows="18"></textarea>
+		            </div>
+		            {{/if }}
+		             {{#if imgType}}
+		            {{> addImg}}
+		            {{/if }}
+		             {{#if videoType}}
+		            <div class="">
+		            	video
+		            </div>
+		            {{/if }}
+		            <div id="add" class="pure-u-5-5">	
+		            	<input class="pure-button pure-button-primary" type="submit" value="Add subject to Story">
+		            </div>
+		    </form>
+		</div>
+	</div>
+
+	<div class="overlay">
+
+	</div>	
+
+
+
+</template>	
+
+<template name="addImg">
+	<div class="">
+		<h3>ADD AN IMAGE </h3>
+    	<div id="addImg">
+    	{{#each files}}	
+    	{{#if secure_url}}
+			<img id="subjectContent" src="{{secure_url}}">
+    	{{/if}}
+    	{{/each}}
+    	</div>
+    	<input type="file" class="file_bag">
+		<button class="upload" style="width:150px; height:50px; background-color:red;">Upload</button>
+    	
+    </div>
+</template>	
+
+
+
+<template name="text">
+	
+	<div class="subject" >
+		{{createBy}}
+		{{content}}
+	</div>
+</template>	
+
+<template name="img">
+	<div class="subject" >
+		{{createBy}}
+		<img id="img" src="{{content}}">
+	</div>
+</template>	
+
+<template name="video">
+	<div class="subject" >
+		video content
+		{{content}}
+	</div>
+</template>	
+
