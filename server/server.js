@@ -142,7 +142,7 @@ Meteor.startup(function () {
       },
 
       getUserDetails:function(userId){
-        return : Meteor.users.findOne(_id :userId);
+        return Meteor.users.findOne({_id :userId });
       } 
 
     })  
